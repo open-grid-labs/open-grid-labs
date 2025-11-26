@@ -78,7 +78,7 @@ const Footer = () => {
                 {links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {
-                      link.href === '/sitemap.xml' ? (
+                      link.name === 'Site Map' ? (
                         <a
                           href={link.href}
                           className="text-muted-foreground hover:text-foreground transition-colors"
