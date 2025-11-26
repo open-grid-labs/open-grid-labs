@@ -1,4 +1,4 @@
-name: Deploy PDX Work to GitHub Pages
+name: Deploy PDxWork to GitHub Pages
 
 on:
   workflow_dispatch:

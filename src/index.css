@@ -10,6 +10,12 @@ body {
   font-style: normal;
 }
 
+.calendly-inline-widget {
+  width: 100%;    /* full width of container */
+  height: 700px;  /* adjust height as needed */
+}
+
+
 @theme {
 	/* Base Colors */
 	--color-background: hsl(0, 0%, 100%);

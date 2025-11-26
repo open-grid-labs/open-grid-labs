@@ -10,13 +10,17 @@ type ContactCardProps = {
 	label: string
 	children?: ReactNode
 	items: string[]
+	href?: string
+	hrefItemIdx?: number
 }
 
 function ContactCard({
 	icon,
 	label,
 	children,
-	items
+	items,
+	href,
+	hrefItemIdx
 }: ContactCardProps) {
 	return (
 		<div className="flex flex-col gap-4 p-6 bg-foreground/5 rounded-2xl">
@@ -24,11 +28,19 @@ function ContactCard({
 				{icon}
 			</div>
 			<h3 className="text-2xl md:text-3xl font-semibold text-foreground">{label}</h3>
-			{
-				items.map((item, i) => (
-					<p key={i} className="text-lg md:text-xl text-muted-foreground font-medium">{item}</p>
-				))
-			}
+			<div className="flex flex-col gap-2">
+				{
+					items.map((item, i) => (
+						(href && hrefItemIdx == i) ? (
+							<div>
+								<a key={i} href={href} target="_blank" rel="noopener noreferrer" className="inline text-lg md:text-xl text-muted-foreground font-medium hover:underline">{item}</a>
+							</div>
+						) : (
+							<p key={i} className="text-lg md:text-xl text-muted-foreground font-medium">{item}</p>
+						)
+					))
+				}
+			</div>
 			{children}
 		</div>
 	)
@@ -54,12 +66,16 @@ export default function ContactInfo() {
 				icon={<Mail className="text-background" size={28} />}
 				label="Email"
 				items={['Reach us via email for inquiries', 'contact@company.com']}
+				href="mailto:contact@company.com"
+				hrefItemIdx={1}
 			/>
 
 			<ContactCard
 				icon={<FontAwesomeIcon icon={faWhatsapp} className="text-background" size={'xl'} />}
 				label="WhatsApp"
 				items={['+1 315 908 7303']}
+				href={'https://wa.me/13159087303'}
+				hrefItemIdx={0}
 			/>
 
 			<ContactCard

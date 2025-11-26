@@ -1,4 +1,4 @@
-import { faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
 import { Link } from "react-router";
@@ -28,7 +28,6 @@ const footerLinks = {
 
 export const socialLinks = [
   { icon: <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />, href: "https://www.linkedin.com/in/priyanshud", label: "LinkedIn" },
-  { icon: <FontAwesomeIcon icon={faXTwitter} className="w-4 h-4" />, href: "#", label: "Twitter" },
 ];
 
 const Footer = () => {
@@ -45,7 +44,7 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-xl font-display font-bold mb-4">PDX Work</h3>
+              <h3 className="text-xl font-display font-bold mb-4">PDxWork</h3>
               <p className="text-muted-foreground mb-6 max-w-xs">
                 Empowering businesses with innovative IT solutions.
               </p>
@@ -108,7 +107,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="pt-8 border-t border-border text-center text-muted-foreground"
         >
-          <p>© {currentYear} PDX Work. All rights reserved.</p>
+          <p>© {currentYear} PDxWork. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>
