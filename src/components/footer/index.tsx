@@ -2,6 +2,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import Logo from "../../icons/logo/index.tsx";
 
 const footerLinks = {
   Services: [
@@ -44,7 +45,9 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-xl font-display font-bold mb-4">PDxWork</h3>
+              <div className="mb-4">
+                <Logo />
+              </div>
               <p className="text-muted-foreground mb-6 max-w-xs">
                 Empowering businesses with innovative IT solutions.
               </p>
