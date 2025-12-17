@@ -27,7 +27,7 @@ function ContactCard({
 			<div className="p-3 rounded-lg bg-foreground w-fit">
 				{icon}
 			</div>
-			<h3 className="text-2xl md:text-3xl font-semibold animated-gradient-text">{label}</h3>
+			<h3 className="text-2xl md:text-3xl font-semibold text-foreground">{label}</h3>
 			<div className="flex flex-col gap-2">
 				{
 					items.map((item, i) => (

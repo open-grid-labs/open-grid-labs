@@ -38,7 +38,7 @@ function StyledPhoneInput({
 }: StyledPhoneInputProps) {
 	return (
 		<div className="flex flex-col gap-2">
-			<label className="font-semibold text-lg md:text-xl animated-gradient-text">
+			<label className="text-foreground font-semibold text-lg md:text-xl">
 				{label}
 			</label>
 
@@ -67,7 +67,7 @@ function RadioPills({ options, name, value, setValue }: { options: string[]; nam
 				<label
 					key={option}
 					className={`px-4 py-2 border rounded-xl text-sm md:text-base cursor-pointer transition 
-						${value === option ? "animated-gradient-bg border-transparent" : "border-border text-foreground hover:bg-foreground/10"}`}
+						${value === option ? "bg-foreground text-background border-foreground" : "border-border text-foreground hover:bg-foreground/10"}`}
 				>
 					<input
 						type="radio"
@@ -186,7 +186,7 @@ export default function ContactForm() {
 				</div>
 
 				<div className="flex flex-col gap-2">
-					<h2 className="font-semibold text-lg md:text-xl animated-gradient-text">Domain</h2>
+					<h2 className="text-foreground font-semibold text-lg md:text-xl">Domain</h2>
 					<RadioPills name="domain" options={domains} value={formData.domain}
 						setValue={(v) => {
 							setFormData({ ...formData, domain: v })
@@ -201,7 +201,7 @@ export default function ContactForm() {
 				</div>
 
 				<div className="flex flex-col gap-2">
-					<h2 className="font-semibold text-lg md:text-xl animated-gradient-text">Services</h2>
+					<h2 className="text-foreground font-semibold text-lg md:text-xl">Services</h2>
 					<RadioPills name="service" options={services} value={formData.services}
 						setValue={(v) => {
 							setFormData({ ...formData, services: v })
@@ -216,7 +216,7 @@ export default function ContactForm() {
 				</div>
 
 				<div className="flex flex-col gap-2">
-					<h2 className="font-semibold text-lg md:text-xl animated-gradient-text">Budget In USD</h2>
+					<h2 className="text-foreground font-semibold text-lg md:text-xl">Budget In USD</h2>
 					<RadioPills name="budget" options={budgets} value={formData.budget}
 						setValue={(v) => {
 							setFormData({ ...formData, budget: v })
@@ -242,7 +242,7 @@ export default function ContactForm() {
 					type="button"
 					onClick={handleSubmit}
 					disabled={loading}
-					className={`w-28 justify-center text-xl overflow-hidden inline-flex shrink-0 items-center font-semibold transition-colors relative select-none cursor-pointer h-12 px-6 animated-gradient-bg rounded-[15px]`}
+					className={`w-28 justify-center text-xl overflow-hidden inline-flex shrink-0 items-center font-semibold transition-colors relative select-none cursor-pointer h-12 px-6 bg-foreground text-background hover:bg-foreground/85 rounded-[15px]`}
 				>
 					{
 						loading ? (

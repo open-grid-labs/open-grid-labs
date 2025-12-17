@@ -52,7 +52,7 @@ export default function CoreValues() {
 				{coreValues.map((value, idx) => (
 					<div key={idx}>
 						<div className="flex flex-col gap-4">
-							<h3 className="text-3xl w-full font-medium animated-gradient-text">
+							<h3 className="text-3xl w-full font-medium text-foreground">
 								{value.title}
 							</h3>
 							<p className="text-muted-foreground font-normal text-lg">{value.description}</p>

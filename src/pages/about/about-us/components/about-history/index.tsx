@@ -46,7 +46,7 @@ const Timeline = ({ data }: TimelineProps) => {
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-foreground text-white z-10">
                   {item.icon}
                 </div>
-                <span className="ml-4 font-bold text-lg md:text-xl animated-gradient-text">{item.year}</span>
+                <span className="ml-4 text-foreground font-bold text-lg md:text-xl">{item.year}</span>
               </div>
               <p className="mt-2 text-muted-foreground text-base md:text-lg max-w-md">{item.description}</p>
 

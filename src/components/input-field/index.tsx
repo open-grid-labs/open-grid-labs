@@ -14,7 +14,7 @@ export function InputField({ label, placeholder, value, onChange, type = "text",
 	if (type === "textarea") {
 		return (
 			<div className="flex flex-col gap-2">
-				<label className="font-semibold text-lg md:text-xl animated-gradient-text">{label}</label>
+				<label className="text-foreground font-semibold text-lg md:text-xl">{label}</label>
 				<textarea
 					onChange={(e) => onChange(e.target.value)}
 					value={value}
@@ -33,7 +33,7 @@ export function InputField({ label, placeholder, value, onChange, type = "text",
 
 	return (
 		<div className="flex flex-col gap-2">
-			<label className="font-semibold text-lg md:text-xl animated-gradient-text">{label}</label>
+			<label className="text-foreground font-semibold text-lg md:text-xl">{label}</label>
 			<div className={`flex items-center gap-2 ${prefix ? "border border-border rounded-xl px-4 py-3" : ""}`}>
 				{prefix && <span className="text-foreground font-medium">{prefix}</span>}
 				<input

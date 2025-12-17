@@ -20,7 +20,7 @@ export default function Card({
 			<div className="relative z-10 flex flex-col gap-4">
 				<Indicator />
 
-				<h2 className="text-2xl md:text-3xl font-semibold font-switzer line-clamp-3 animated-gradient-text">
+				<h2 className="text-2xl md:text-3xl text-foreground font-semibold font-switzer line-clamp-3">
 					{title}
 				</h2>
 

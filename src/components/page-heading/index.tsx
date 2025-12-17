@@ -27,7 +27,7 @@ export default function PageHeading({
 
 			<div className="flex flex-col items-center gap-3">
 				<h1 className="font-bold text-foreground uppercase tracking-tight flex flex-col md:flex-row items-center gap-2 md:gap-3 text-3xl md:text-6xl text-center md:text-left">
-					{preTitle && <span className="break-words animated-gradient-text">{preTitle}</span>}
+					{preTitle && <span className="break-words">{preTitle}</span>}
 
 					{!hideIcon && (
 						<motion.span
@@ -47,12 +47,12 @@ export default function PageHeading({
 						</motion.span>
 					)}
 
-					<span className="break-words animated-gradient-text">{mainTitle}</span>
+					<span className="break-words">{mainTitle}</span>
 				</h1>
 
 
 				{postTitle && (
-					<h2 className="font-semibold text-2xl md:text-4xl uppercase opacity-90 animated-gradient-text">
+					<h2 className="font-semibold text-foreground text-2xl md:text-4xl uppercase opacity-90">
 						{postTitle}
 					</h2>
 				)}

@@ -75,7 +75,7 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
-              <h4 className="font-display font-semibold mb-4 animated-gradient-text">{category}</h4>
+              <h4 className="font-display font-semibold mb-4">{category}</h4>
               <ul className="space-y-2">
                 {links.map((link, linkIndex) => (
                   <li key={linkIndex}>

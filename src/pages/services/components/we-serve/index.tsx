@@ -47,7 +47,7 @@ const ServiceCategory = ({ title, items }: { title: string, items: string[] }) =
 	return (
 		<div className="w-full flex flex-col gap-8">
 			<h1 className="text-4xl md:text-5xl font-extrabold tracking-wide flex flex-wrap">
-				<span className="animated-gradient-text">{part1}</span>
+				<span className="text-primary">{part1}</span>
 				<span className="text-muted-foreground ml-2">{part2}</span>
 			</h1>
 

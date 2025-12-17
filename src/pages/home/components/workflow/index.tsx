@@ -67,7 +67,7 @@ export default function HomeWorkflow() {
 							>
 								<CheckCircle2 className="size-7" />
 							</div>
-						<h2 className="mt-4 font-semibold text-lg animated-gradient-text">{s.title}</h2>
+							<h2 className="mt-4 font-semibold text-lg text-foreground">{s.title}</h2>
 							<p className="mt-2 text-sm text-muted-foreground max-w-[180px]">{s.desc}</p>
 						</div>
 					))}

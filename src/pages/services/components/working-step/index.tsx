@@ -24,7 +24,7 @@ export default function WorkingStep({ steps }: WorkingStepProps) {
 						<div className="absolute -left-8 top-8 w-16 h-16 flex items-center justify-center bg-primary text-secondary font-bold text-2xl rounded-full">
 							{step.number}
 						</div>
-						<h2 className="font-bold text-2xl mt-4 ml-2 animated-gradient-text">{step.title}</h2>
+						<h2 className="font-bold text-2xl mt-4 ml-2">{step.title}</h2>
 						<p className="text-muted-foreground text-lg ml-2">{step.desc}</p>
 					</div>
 				))}

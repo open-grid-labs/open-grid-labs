@@ -52,12 +52,12 @@ function StickyServicesSection({
 		>
 			{services.map(([num, name, desc]) => (
 				<div key={num} className="flex flex-col gap-6 pb-10 border-b border-border/40">
-					<h2 className="text-6xl md:text-7xl font-extrabold animated-gradient-text">
+					<h2 className="text-6xl md:text-7xl font-extrabold text-muted-foreground">
 						{num}
 					</h2>
 
 					<div className="flex flex-col md:flex-row md:gap-8 gap-4">
-						<h3 className="text-3xl font-semibold animated-gradient-text md:w-1/3 leading-tight">
+						<h3 className="text-3xl font-semibold text-foreground md:w-1/3 leading-tight">
 							{name}
 						</h3>
 

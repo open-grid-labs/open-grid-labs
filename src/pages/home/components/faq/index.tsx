@@ -56,7 +56,7 @@ export default function HomeFaq({
 								className="flex justify-between items-center w-full px-6 py-4 text-left cursor-pointer"
 							>
 								<span className="text-lg font-medium text-foreground flex gap-2">
-								<span className="animated-gradient-text">
+									<span className="text-muted-foreground">
 										{(i + 1).toString().padStart(2, '0')}
 									</span>
 									{faq.question}</span>
@@ -85,7 +85,7 @@ export default function HomeFaq({
 
 					<h4 className="text-3xl font-semibold text-muted-foreground z-10 relative">
 						Still Not Sure? <br />
-						<span className="animated-gradient-text">Book A Call.</span>
+						<span className="text-foreground">Book A Call.</span>
 					</h4>
 
 					<p className="text-sm text-muted-foreground -mt-1 z-10 relative">

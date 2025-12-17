@@ -39,7 +39,7 @@ export default function ClientsExpertise() {
 					<div className="w-16 h-16 flex items-center justify-center mb-4 bg-primary/10 rounded-full">
 						{item.icon}
 					</div>
-					<h4 className="text-lg md:text-xl font-semibold animated-gradient-text">
+					<h4 className="text-lg md:text-xl font-semibold">
 						{item.title}
 					</h4>
 				</div>

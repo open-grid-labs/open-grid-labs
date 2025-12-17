@@ -74,7 +74,7 @@ export default function TeamSection() {
 						</div>
 
 						<div className="flex flex-col items-center gap-1">
-							<h3 className="text-lg md:text-xl font-semibold animated-gradient-text">{member.name}</h3>
+							<h3 className="text-lg md:text-xl font-semibold text-foreground">{member.name}</h3>
 							<p className="text-sm md:text-base text-muted-foreground">{member.role}</p>
 						</div>
 

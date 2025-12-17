@@ -79,7 +79,7 @@ function ReviewCard({ review }: ReviewCardProps) {
           src={review.image}
         />
         <div>
-          <p className="font-semibold text-sm animated-gradient-text">{review.name}</p>
+          <p className="font-semibold text-sm text-foreground">{review.name}</p>
           <p className="text-xs text-muted-foreground">{review.role}</p>
         </div>
       </div>

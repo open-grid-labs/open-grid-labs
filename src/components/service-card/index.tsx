@@ -14,11 +14,11 @@ export default function ServiceCard({ link, name, description }: ServiceCardProp
 			to={link}
 			className="flex-1"
 		>
-			<div className="group relative w-full h-full bg-white rounded-2xl border border-border overflow-hidden p-6 flex flex-col justify-between gap-4 cursor-pointer transition hover:border-primary duration-200">
+			<div className="relative w-full h-full bg-white rounded-2xl border border-border overflow-hidden p-6 flex flex-col justify-between gap-4 cursor-pointer transition hover:border-primary duration-200">
 				<Indicator />
 
 				<div className="flex items-center justify-between">
-					<h3 className="text-xl font-bold group-hover:animated-gradient-text transition-colors">{name}</h3>
+					<h3 className="text-xl font-bold">{name}</h3>
 					<ArrowRight className="text-primary" size={24} />
 				</div>
 

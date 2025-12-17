@@ -15,11 +15,11 @@ export default function PageTitle({
 		<div className="relative text-center px-4 py-8 flex flex-col items-center w-full gap-6 bg-primary rounded-xl shadow-lg">
 
 			{label && (
-				<span className="text-muted-foreground font-semibold tracking-wider uppercase animated-gradient-text">{label}</span>
+				<span className="text-muted-foreground font-semibold tracking-wider uppercase">{label}</span>
 			)}
 
 			{mainTitle && (
-				<h1 className="font-bold text-4xl md:text-6xl text-white tracking-tight mb-2 uppercase animated-gradient-text">
+				<h1 className="font-bold text-4xl md:text-6xl text-white tracking-tight mb-2 uppercase">
 					{mainTitle}
 				</h1>
 			)}

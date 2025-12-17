@@ -116,7 +116,7 @@ const Nav = () => {
 											initial={{ opacity: 0, y: -20 }}
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ delay: 0.3 + index * 0.1 }}
-											className={`flex gap-1 items-center text-muted-foreground hover:animated-gradient-text font-medium cursor-pointer ${pathname.startsWith(item.href ?? 'none') ? 'animated-gradient-text' : ''}`}
+											className={`flex gap-1 items-center text-muted-foreground hover:text-foreground font-medium cursor-pointer ${pathname.startsWith(item.href ?? 'none') ? 'text-primary' : ''}`}
 										>
 											{
 												item.dropdown ? (<span>{item.name}</span>) : (
@@ -208,7 +208,7 @@ const Nav = () => {
 								{navItems.map((item) => (
 									<div key={item.name} className="flex flex-col">
 										<button
-											className="text-muted-foreground hover:animated-gradient-text text-left font-medium flex justify-between items-center w-full text-2xl py-2 cursor-pointer"
+											className="text-muted-foreground hover:text-foreground text-left font-medium flex justify-between items-center w-full text-2xl py-2 cursor-pointer"
 											onClick={() =>
 												item.dropdown
 													? setOpenAccordion(openAccordion === item.name ? null : item.name)

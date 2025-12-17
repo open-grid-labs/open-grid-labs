@@ -37,7 +37,7 @@ export default function ToolsWeUse({ tools }: ToolsWeUseProps) {
 									)
 								}
 							</div>
-							<span className="text-lg font-semibold animated-gradient-text">
+							<span className="text-lg font-semibold">
 								{tool.name}
 							</span>
 						</div>
