@@ -81,7 +81,7 @@ export default function HomeFaq({
 				<div className="md:w-96 flex flex-col py-8 px-6 rounded-2xl bg-foreground/2 border border-border gap-6 relative overflow-hidden">
 					<div className="absolute -top-6 -right-6 w-24 h-24 bg-foreground/10 rounded-full z-0"></div>
 
-					<img src="logo.svg" alt="logo" className="w-16 h-16 z-10 relative" />
+					<img src="/images/logo_light.svg" alt="logo" className="w-16 h-16 z-10 relative" />
 
 					<h4 className="text-3xl font-semibold text-muted-foreground z-10 relative">
 						Still Not Sure? <br />

@@ -54,7 +54,7 @@ const Hero = () => {
 						transition={{ duration: 0.3, delay: 0.2 }}
 						className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight tracking-tight"
 					>
-						Change Your
+						Transform Your
 						<br />
 						Digital Future
 					</motion.h1>
