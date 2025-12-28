@@ -3,6 +3,7 @@ import PageTitle from "../../../components/page-title";
 import PageHeading from "../../../components/page-heading";
 import { CheckCircle2 } from "lucide-react";
 import Indicator from "../../../components/ui/indicator";
+import Carousel from "../../../components/ui/carousel";
 
 interface ProjectDetail {
 	id: string;
@@ -20,7 +21,9 @@ interface ProjectDetail {
 		metric: string;
 		value: string;
 	}[];
-	images?: string[];
+	videoUrl?: string;
+	galleryImages?: string[];
+	galleryGifs?: string[];
 }
 
 const projectsData: Record<string, ProjectDetail> = {
@@ -59,6 +62,16 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "Accuracy Improvement", value: "25%" },
 			{ metric: "User Satisfaction", value: "95%" },
 			{ metric: "Time Saved", value: "40%" }
+		],
+		videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+		galleryImages: [
+			"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1576091160550-2187d80a18f0?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1516549655169-df83a0833860?auto=format&fit=crop&q=80&w=2070"
+		],
+		galleryGifs: [
+			"https://media.giphy.com/media/26tn33aiTi1jbp6x2/giphy.gif",
+			"https://media.giphy.com/media/l0HlHFRbmaZtBRhXG/giphy.gif"
 		]
 	},
 	"cloud-medical-devices": {
@@ -96,6 +109,16 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "Devices Supported", value: "10,000+" },
 			{ metric: "Response Time", value: "<100ms" },
 			{ metric: "Data Processed", value: "5TB/day" }
+		],
+		videoUrl: "https://www.w3schools.com/html/movie.mp4",
+		galleryImages: [
+			"https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2080",
+			"https://images.unsplash.com/photo-1530497610245-94d3c16cda48?auto=format&fit=crop&q=80&w=2080"
+		],
+		galleryGifs: [
+			"https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif",
+			"https://media.giphy.com/media/3o7abKhOpu0NwnRgE8/giphy.gif"
 		]
 	},
 	"airtrader-trading-simulator": {
@@ -133,6 +156,16 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "Trades Simulated", value: "1M+" },
 			{ metric: "User Engagement", value: "45 min/session" },
 			{ metric: "Skill Improvement", value: "60%" }
+		],
+		videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+		galleryImages: [
+			"https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=2070"
+		],
+		galleryGifs: [
+			"https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif",
+			"https://media.giphy.com/media/l41lFw057lAJcYt0Y/giphy.gif"
 		]
 	},
 	"crypto-analytical-tools": {
@@ -170,6 +203,16 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "Data Points/Second", value: "10,000+" },
 			{ metric: "Prediction Accuracy", value: "75%" },
 			{ metric: "User ROI Improvement", value: "35%" }
+		],
+		videoUrl: "https://www.w3schools.com/html/movie.mp4",
+		galleryImages: [
+			"https://images.unsplash.com/photo-1621504450168-b8c4375b2b80?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1622630998477-20aa696fab05?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1605792657660-596af9009e82?auto=format&fit=crop&q=80&w=2002"
+		],
+		galleryGifs: [
+			"https://media.giphy.com/media/7FBY7h5Pcyh6BbILFB/giphy.gif",
+			"https://media.giphy.com/media/l0HlJDaeqNUDhhaCt/giphy.gif"
 		]
 	},
 	"tread-pattern-dashboard": {
@@ -207,6 +250,16 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "Maintenance Cost Reduction", value: "30%" },
 			{ metric: "Processing Time", value: "5 sec/tire" },
 			{ metric: "Defect Detection", value: "95%" }
+		],
+		videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+		galleryImages: [
+			"https://images.unsplash.com/photo-1487887235942-6101435aa7a1?auto=format&fit=crop&q=80&w=1974",
+			"https://images.unsplash.com/photo-1579609598045-60479b660cb8?auto=format&fit=crop&q=80&w=2070",
+			"https://images.unsplash.com/photo-1583198432859-634bb3284951?auto=format&fit=crop&q=80&w=2070"
+		],
+		galleryGifs: [
+			"https://media.giphy.com/media/Q81NcsY6YxK7jxnr4v/giphy.gif",
+			"https://media.giphy.com/media/3o7qEcqN5PjN90jNC0/giphy.gif"
 		]
 	}
 };
@@ -258,6 +311,59 @@ export default function ProjectDetails() {
 						</div>
 					</div>
 				</section>
+
+				{/* Media Section: Video -> Image Carousel -> GIF Carousel */}
+				{(project.videoUrl || (project.galleryImages && project.galleryImages.length > 0) || (project.galleryGifs && project.galleryGifs.length > 0)) && (
+					<section className="space-y-12">
+						{/* Video Section */}
+						{project.videoUrl && (
+							<div>
+								<PageHeading
+									preTitle="Project"
+									mainTitle="Video"
+									postTitle="Demo"
+								/>
+								<div className="mt-8 rounded-xl overflow-hidden border border-border bg-foreground/5 aspect-video">
+									<video
+										src={project.videoUrl}
+										controls
+										className="w-full h-full object-cover"
+									>
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+						)}
+
+						{/* Image Carousel */}
+						{project.galleryImages && project.galleryImages.length > 0 && (
+							<div>
+								<PageHeading
+									preTitle="Project"
+									mainTitle="Gallery"
+									postTitle=""
+								/>
+								<div className="mt-8">
+									<Carousel items={project.galleryImages} type="image" />
+								</div>
+							</div>
+						)}
+
+						{/* GIF Carousel */}
+						{project.galleryGifs && project.galleryGifs.length > 0 && (
+							<div>
+								<PageHeading
+									preTitle="Project"
+									mainTitle="GIFs"
+									postTitle=""
+								/>
+								<div className="mt-8">
+									<Carousel items={project.galleryGifs} type="image" />
+								</div>
+							</div>
+						)}
+					</section>
+				)}
 
 				{/* Technologies */}
 				<section>
