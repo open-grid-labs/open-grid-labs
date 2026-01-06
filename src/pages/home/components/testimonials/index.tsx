@@ -7,7 +7,7 @@ const reviews = [
     role: "CEO at Morphle Labs",
     image: "founders/rohit-hiwale.jpeg",
     rating: 5,
-    comment: "The frontend microscopic scanner is incredibly intuitive. It has streamlined our workflow and improved accuracy tremendously.",
+    comment: "The web application for microscopic scanner is incredibly intuitive. It has streamlined our workflow and improved accuracy tremendously.",
   },
   {
     name: "Chris DuPont",
