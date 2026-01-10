@@ -33,7 +33,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		description: "A highly intuitive web application for microscopic scanner that streamlines workflows and improves accuracy.",
 		category: "Medical Technology",
 		client: "Medical Research Lab",
-		duration: "6 months",
+		duration: "1 year",
 		technologies: ["React", "TypeScript", "WebGL", "Node.js", "Express", "MongoDB"],
 		overview: "Developed a cutting-edge web application for microscopic scanner that enables medical professionals to analyze microscopic images with enhanced precision. The application features real-time image processing, advanced zoom capabilities, and automated detection algorithms.",
 		challenges: [
@@ -123,7 +123,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		description: "A robust and user-friendly trading simulator for strategy testing and decision-making.",
 		category: "Fintech",
 		client: "Financial Education Platform",
-		duration: "5 months",
+		duration: "6 months",
 		technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Redis", "Chart.js"],
 		overview: "Developed a comprehensive trading simulator that allows users to practice trading strategies with real-time market data without risking real money. Features include portfolio management, technical analysis tools, and performance analytics.",
 		challenges: [
@@ -307,8 +307,8 @@ const projectsData: Record<string, ProjectDetail> = {
 		title: "Champspace - Learn & Earn Platform",
 		description: "An edtech platform where students learn through courses and earn money by completing them",
 		category: "EdTech",
-		client: "Champspace Inc.",
-		duration: "10 months",
+		client: "champspace.in",
+		duration: "3 months",
 		technologies: ["React", "Node.js", "TypeScript", "MongoDB", "Stripe", "AWS", "WebRTC"],
 		overview: "Built a revolutionary learning management system that incentivizes education by paying students as they complete courses. The platform provides a seamless learning experience with video content, assessments, and a transparent reward mechanism that converts learning into real earnings.",
 		challenges: [
