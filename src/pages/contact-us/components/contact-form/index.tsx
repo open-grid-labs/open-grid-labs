@@ -4,6 +4,7 @@ import PageHeading2 from "../../../../components/page-heading-2";
 import { toast } from "react-toastify";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import FileUpload from "../../../../components/file-upload";
 
 
 const services = ["UX-UI", "Web Apps", "Mobile Apps", "Web Design", "Web Flow", "Intelligence", "App UI", "Other"];
@@ -95,6 +96,7 @@ export default function ContactForm() {
 		budget: '',
 		comments: '',
 	})
+	const [attachment, setAttachment] = useState<File | null>(null)
 	const [errors, setErrors] = useState({
 		name: '',
 		email: '',
@@ -119,6 +121,12 @@ export default function ContactForm() {
 		if (!formData.budget) newErrors.budget = "Budget is required";
 		if (!formData.comments) newErrors.comments = "Comments are required";
 
+		// Validate file size (Web3Forms limit is 10MB)
+		if (attachment && attachment.size > 10 * 1024 * 1024) {
+			toast.error("File size must be less than 10MB");
+			return;
+		}
+
 		setErrors(newErrors);
 
 		if (Object.keys(newErrors).length > 0) return;
@@ -128,6 +136,9 @@ export default function ContactForm() {
 		Object.entries(formData).forEach(([key, value]) => {
 			fd.append(key, value);
 		});
+		if (attachment) {
+			fd.append("attachment", attachment);
+		}
 		fd.append("access_key", "7ce8502f-e86a-4944-a377-30c9e87456ad");
 
 		const response = await fetch("https://api.web3forms.com/submit", {
@@ -136,7 +147,19 @@ export default function ContactForm() {
 		});
 		const data = await response.json();
 		if (data.success) {
-			toast.success("Form submitted")
+			toast.success("Form submitted successfully!")
+			// Reset form after successful submission
+			setFormData({
+				name: '',
+				email: '',
+				phoneNumber: '',
+				company: '',
+				domain: '',
+				services: '',
+				budget: '',
+				comments: '',
+			});
+			setAttachment(null);
 		} else {
 			toast.error("Error submitting form (may be detected as spam)")
 		}
@@ -237,6 +260,12 @@ export default function ContactForm() {
 					}}
 					error={errors.comments}
 					label="Comments" placeholder="Write your message here..." type="textarea" rows={4} />
+
+				<FileUpload
+					label="Attachment (Optional)"
+					file={attachment}
+					onChange={setAttachment}
+				/>
 
 				<button
 					type="button"
