@@ -1,7 +1,7 @@
-import { useState, useId, useEffect, type DragEvent, type ChangeEvent } from "react";
+import { useState, useEffect } from "react";
 import PageTitle from "../../../components/page-title";
 import PageHeading from "../../../components/page-heading";
-import { Briefcase, Code, TestTube, Shield, Users, Megaphone, GraduationCap, MapPin, Clock, ChevronDown, ChevronUp, Send, X, Upload } from "lucide-react";
+import { Briefcase, Code, TestTube, Shield, Users, Megaphone, GraduationCap, MapPin, Clock, ChevronDown, ChevronUp, Send, X } from "lucide-react";
 import { toast } from "react-toastify";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -310,107 +310,6 @@ const jobPositions: JobPosition[] = [
 	}
 ];
 
-// Resume Upload Component
-function ResumeUpload({ file, onChange }: { file: File | null; onChange: (file: File | null) => void }) {
-	const inputId = useId();
-
-	const handleDrop = (e: DragEvent<HTMLDivElement>) => {
-		e.preventDefault();
-		if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-			const droppedFile = e.dataTransfer.files[0];
-			if (validateFile(droppedFile)) {
-				onChange(droppedFile);
-			}
-		}
-	};
-
-	const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-		if (e.target.files && e.target.files[0]) {
-			const selectedFile = e.target.files[0];
-			if (validateFile(selectedFile)) {
-				onChange(selectedFile);
-			}
-		}
-	};
-
-	const validateFile = (file: File): boolean => {
-		const maxSize = 10 * 1024 * 1024; // 10MB
-		const allowedTypes = [
-			'application/pdf',
-			'application/msword',
-			'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-			'image/jpeg',
-			'image/png'
-		];
-
-		if (file.size > maxSize) {
-			toast.error("File size must be less than 10MB");
-			return false;
-		}
-
-		if (!allowedTypes.includes(file.type)) {
-			toast.error("Please upload PDF, DOC, DOCX, JPG, or PNG files only");
-			return false;
-		}
-
-		return true;
-	};
-
-	const handleClick = () => {
-		document.getElementById(inputId)?.click();
-	};
-
-	const handleRemove = (e: React.MouseEvent) => {
-		e.stopPropagation();
-		onChange(null);
-	};
-
-	return (
-		<div className="flex flex-col gap-2 w-full">
-			<label className="text-foreground font-semibold text-base">
-				Resume / CV <span className="text-red-500">*</span>
-			</label>
-			<div
-				className="flex flex-col items-center justify-center w-full h-32 bg-foreground/5 text-foreground border border-dashed border-border rounded-xl cursor-pointer hover:bg-foreground/10 transition-colors"
-				onDrop={handleDrop}
-				onDragOver={(e) => e.preventDefault()}
-				onClick={handleClick}
-			>
-				<div className="flex flex-col items-center justify-center text-center px-4">
-					{file ? (
-						<div className="flex flex-col items-center gap-2">
-							<p className="font-semibold text-foreground text-sm">{file.name}</p>
-							<p className="text-xs text-muted-foreground">
-								{(file.size / 1024 / 1024).toFixed(2)} MB
-							</p>
-							<button
-								type="button"
-								onClick={handleRemove}
-								className="inline-flex items-center text-red-500 hover:text-red-700 font-medium text-sm transition-colors"
-							>
-								Remove file
-							</button>
-						</div>
-					) : (
-						<>
-							<Upload className="w-6 h-6 mb-2 text-muted-foreground" />
-							<p className="text-sm text-muted-foreground">Drag & drop or click to upload</p>
-							<p className="text-xs text-muted-foreground">PDF, DOC, DOCX, JPG, PNG (Max 10MB)</p>
-						</>
-					)}
-				</div>
-			</div>
-			<input
-				id={inputId}
-				type="file"
-				className="hidden"
-				accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-				onChange={handleFileChange}
-			/>
-		</div>
-	);
-}
-
 // Application Form Modal
 function ApplicationModal({ 
 	isOpen, 
@@ -429,7 +328,6 @@ function ApplicationModal({
 		experience: '',
 		coverLetter: ''
 	});
-	const [resume, setResume] = useState<File | null>(null);
 	const [errors, setErrors] = useState<Record<string, string>>({});
 	const [loading, setLoading] = useState(false);
 
@@ -448,12 +346,6 @@ function ApplicationModal({
 		if (!formData.phone) newErrors.phone = "Phone number is required";
 		if (!formData.position) newErrors.position = "Position is required";
 		if (!formData.experience) newErrors.experience = "Experience is required";
-		if (!resume) newErrors.resume = "Resume is required";
-
-		// Validate file size (Web3Forms limit is 10MB)
-		if (resume && resume.size > 10 * 1024 * 1024) {
-			newErrors.resume = "File size must be less than 10MB";
-		}
 
 		setErrors(newErrors);
 
@@ -476,11 +368,6 @@ function ApplicationModal({
 		if (formData.coverLetter) {
 			fd.append("Cover Letter", formData.coverLetter);
 		}
-		
-		// File attachment - must be last and use correct field name
-		if (resume) {
-			fd.append("attachment", resume, resume.name);
-		}
 
 		try {
 			const response = await fetch("https://api.web3forms.com/submit", {
@@ -501,7 +388,6 @@ function ApplicationModal({
 					experience: '',
 					coverLetter: ''
 				});
-				setResume(null);
 				onClose();
 			} else {
 				console.error("Web3Forms error:", data);
@@ -643,15 +529,6 @@ function ApplicationModal({
 							<option value="6+ years">6+ years</option>
 						</select>
 						{errors.experience && <p className="text-red-500 text-sm">{errors.experience}</p>}
-					</div>
-
-					{/* Resume Upload */}
-					<div>
-						<ResumeUpload file={resume} onChange={(file) => {
-							setResume(file);
-							if (errors.resume) setErrors({ ...errors, resume: '' });
-						}} />
-						{errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
 					</div>
 
 					{/* Cover Letter */}
