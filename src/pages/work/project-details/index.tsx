@@ -32,9 +32,9 @@ const projectsData: Record<string, ProjectDetail> = {
 		title: "Web application for microscopic scanner",
 		description: "A highly intuitive web application for microscopic scanner that streamlines workflows and improves accuracy.",
 		category: "Medical Technology",
-		client: "Medical Research Lab",
+		client: "Morphle Labs",
 		duration: "1 year",
-		technologies: ["React", "TypeScript", "WebGL", "Node.js", "Express", "MongoDB"],
+		technologies: ["React", "javascript", "python", "django", "java", "c++", "mysql", "nginx", "linux"],
 		overview: "Developed a cutting-edge web application for microscopic scanner that enables medical professionals to analyze microscopic images with enhanced precision. The application features real-time image processing, advanced zoom capabilities, and automated detection algorithms.",
 		challenges: [
 			"Processing high-resolution medical images in real-time without performance degradation",
@@ -58,10 +58,9 @@ const projectsData: Record<string, ProjectDetail> = {
 			"Cloud-based image storage and retrieval"
 		],
 		results: [
-			{ metric: "Processing Speed", value: "3x faster" },
-			{ metric: "Accuracy Improvement", value: "25%" },
-			{ metric: "User Satisfaction", value: "95%" },
-			{ metric: "Time Saved", value: "40%" }
+			{ metric: "Processing Speed", value: "10x faster" },
+			{ metric: "User Satisfaction", value: "100%" },
+			{ metric: "Time Saved", value: "500%" }
 		],
 		videoUrl: "/videos/microscopic-scanner/scanner.mp4",
 		galleryImages: [
@@ -122,9 +121,9 @@ const projectsData: Record<string, ProjectDetail> = {
 		title: "AirTrader – Trading Simulator Application",
 		description: "A robust and user-friendly trading simulator for strategy testing and decision-making.",
 		category: "Fintech",
-		client: "Financial Education Platform",
+		client: "ETG commodities",
 		duration: "6 months",
-		technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Redis", "Chart.js"],
+		technologies: ["React", "typescript", "python", "django", "postgresql", "redis", "ChartIQ", "mongodb", "excel", "nginx", "linux"],
 		overview: "Developed a comprehensive trading simulator that allows users to practice trading strategies with real-time market data without risking real money. Features include portfolio management, technical analysis tools, and performance analytics.",
 		challenges: [
 			"Simulating realistic market conditions and order execution",
@@ -148,10 +147,9 @@ const projectsData: Record<string, ProjectDetail> = {
 			"Educational resources and tutorials"
 		],
 		results: [
-			{ metric: "Active Users", value: "50,000+" },
-			{ metric: "Trades Simulated", value: "1M+" },
-			{ metric: "User Engagement", value: "45 min/session" },
-			{ metric: "Skill Improvement", value: "60%" }
+			{ metric: "Active Users", value: "1000" },
+			{ metric: "Trades Simulated", value: "1m+" },
+			{ metric: "Skill Improvement", value: "200%" }
 		],
 		videoUrl: "/videos/airtrader-trading-simulator/airtraderdemo.mp4",
 		galleryImages: [
@@ -354,7 +352,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		description: "A comprehensive ad agency solution providing one-centric management for all ads across Meta, Google, Amazon, and more",
 		category: "MarTech/AdTech",
 		client: "Digital Marketing Agency",
-		duration: "1 month",
+		duration: "1 month and active",
 		technologies: ["React", "Node.js", "TypeScript", "Python", "PostgreSQL", "Redis", "AWS", "REST APIs"],
 		overview: "Developed a unified advertising management platform that consolidates campaign management across multiple advertising networks including Meta, Google, and Amazon. The platform provides centralized analytics, budget management, and campaign optimization across all channels from a single dashboard.",
 		challenges: [
