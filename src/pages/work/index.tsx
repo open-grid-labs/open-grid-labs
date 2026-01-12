@@ -4,9 +4,9 @@ import { ProjectsGrid } from "./components/projects-grid";
 
 const projects = [
 	{
-		title: "Frontend Microscopic Scanner",
+		title: "Web application for microscopic scanner",
 		description:
-			"A highly intuitive frontend microscopic scanner that streamlines workflows and improves accuracy.",
+			"A highly intuitive web application for microscopic scanner that streamlines workflows and improves accuracy.",
 		href: "/work/frontend-microscopic-scanner",
 	},
 	{
@@ -32,6 +32,24 @@ const projects = [
 		description:
 			"Advanced monitoring system and analytics dashboard to simplify complex data and enhance efficiency.",
 		href: "/work/tread-pattern-dashboard",
+	},
+	{
+		title: "Crypto Deribit Option Trader",
+		description:
+			"Created the infrastructure and software that trades option strategies with fastest latency possible on Deribit exchange",
+		href: "/work/crypto-deribit-option-trader",
+	},
+	{
+		title: "Champspace - Learn & Earn Platform",
+		description:
+			"An edtech platform where students learn through courses and earn money by completing them",
+		href: "/work/champspace",
+	},
+	{
+		title: "Adnow - Unified Ad Management Platform",
+		description:
+			"A comprehensive ad agency solution providing one-centric management for all ads across Meta, Google, Amazon, and more",
+		href: "/work/adnow",
 	},
 ];
 

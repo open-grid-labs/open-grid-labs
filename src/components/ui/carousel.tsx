@@ -44,7 +44,7 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
 					{items.map((item, index) => (
 						<motion.div
 							key={index}
-							className={`relative shrink-0 w-[85%] aspect-[16/10] rounded-3xl overflow-hidden bg-foreground/5`}
+							className={`relative shrink-0 w-[85%] aspect-[16/10] rounded-3xl overflow-hidden bg-foreground/5 flex items-center justify-center`}
 							initial={{ opacity: 0.5, scale: 0.9 }}
 							animate={{
 								opacity: index === currentIndex ? 1 : 0.5,
@@ -121,7 +121,7 @@ function CarouselImage({ src, alt }: { src: string; alt: string }) {
 				<img
 					src={src}
 					alt={alt}
-					className="h-full w-full object-cover"
+					className="h-full w-full object-contain"
 					onLoad={() => setIsLoading(false)}
 					onError={() => {
 						setIsLoading(false);

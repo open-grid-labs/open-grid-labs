@@ -136,7 +136,18 @@ export default function ContactForm() {
 		});
 		const data = await response.json();
 		if (data.success) {
-			toast.success("Form submitted")
+			toast.success("Form submitted successfully!")
+			// Reset form after successful submission
+			setFormData({
+				name: '',
+				email: '',
+				phoneNumber: '',
+				company: '',
+				domain: '',
+				services: '',
+				budget: '',
+				comments: '',
+			});
 		} else {
 			toast.error("Error submitting form (may be detected as spam)")
 		}

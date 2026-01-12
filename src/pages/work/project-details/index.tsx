@@ -29,13 +29,13 @@ interface ProjectDetail {
 const projectsData: Record<string, ProjectDetail> = {
 	"frontend-microscopic-scanner": {
 		id: "frontend-microscopic-scanner",
-		title: "Frontend Microscopic Scanner",
-		description: "A highly intuitive frontend microscopic scanner that streamlines workflows and improves accuracy.",
+		title: "Web application for microscopic scanner",
+		description: "A highly intuitive web application for microscopic scanner that streamlines workflows and improves accuracy.",
 		category: "Medical Technology",
 		client: "Medical Research Lab",
-		duration: "6 months",
+		duration: "1 year",
 		technologies: ["React", "TypeScript", "WebGL", "Node.js", "Express", "MongoDB"],
-		overview: "Developed a cutting-edge frontend microscopic scanner application that enables medical professionals to analyze microscopic images with enhanced precision. The application features real-time image processing, advanced zoom capabilities, and automated detection algorithms.",
+		overview: "Developed a cutting-edge web application for microscopic scanner that enables medical professionals to analyze microscopic images with enhanced precision. The application features real-time image processing, advanced zoom capabilities, and automated detection algorithms.",
 		challenges: [
 			"Processing high-resolution medical images in real-time without performance degradation",
 			"Creating an intuitive interface for complex medical image analysis",
@@ -63,16 +63,12 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "User Satisfaction", value: "95%" },
 			{ metric: "Time Saved", value: "40%" }
 		],
-		videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+		videoUrl: "/videos/microscopic-scanner/scanner.mp4",
 		galleryImages: [
-			"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070",
-			"https://images.unsplash.com/photo-1576091160550-2187d80a18f0?auto=format&fit=crop&q=80&w=2070",
-			"https://images.unsplash.com/photo-1516549655169-df83a0833860?auto=format&fit=crop&q=80&w=2070"
+			"/images/microscopic-scanner/scannerimage1.png",
+			"/images/microscopic-scanner/scannerimage2.png"
 		],
-		galleryGifs: [
-			"https://media.giphy.com/media/26tn33aiTi1jbp6x2/giphy.gif",
-			"https://media.giphy.com/media/l0HlHFRbmaZtBRhXG/giphy.gif"
-		]
+		galleryGifs: []
 	},
 	"cloud-medical-devices": {
 		id: "cloud-medical-devices",
@@ -127,7 +123,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		description: "A robust and user-friendly trading simulator for strategy testing and decision-making.",
 		category: "Fintech",
 		client: "Financial Education Platform",
-		duration: "5 months",
+		duration: "6 months",
 		technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Redis", "Chart.js"],
 		overview: "Developed a comprehensive trading simulator that allows users to practice trading strategies with real-time market data without risking real money. Features include portfolio management, technical analysis tools, and performance analytics.",
 		challenges: [
@@ -157,16 +153,20 @@ const projectsData: Record<string, ProjectDetail> = {
 			{ metric: "User Engagement", value: "45 min/session" },
 			{ metric: "Skill Improvement", value: "60%" }
 		],
-		videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+		videoUrl: "/videos/airtrader-trading-simulator/airtraderdemo.mp4",
 		galleryImages: [
-			"https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&q=80&w=2070",
-			"https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=2070",
-			"https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=2070"
+			"/images/airtrader-trading-simulator/airtraderimage1.png",
+			"/images/airtrader-trading-simulator/airtraderimage2.png",
+			"/images/airtrader-trading-simulator/airtraderimage3.png",
+			"/images/airtrader-trading-simulator/airtraderimage4.png",
+			"/images/airtrader-trading-simulator/airtraderimage5.png",
+			"/images/airtrader-trading-simulator/airtraderimage6.png",
+			"/images/airtrader-trading-simulator/airtraderimage7.png",
+			"/images/airtrader-trading-simulator/airtraderimage8.png",
+			"/images/airtrader-trading-simulator/airtraderimage9.png",
+			"/images/airtrader-trading-simulator/airtraderimage10.png"
 		],
-		galleryGifs: [
-			"https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif",
-			"https://media.giphy.com/media/l41lFw057lAJcYt0Y/giphy.gif"
-		]
+		galleryGifs: []
 	},
 	"crypto-analytical-tools": {
 		id: "crypto-analytical-tools",
@@ -261,8 +261,141 @@ const projectsData: Record<string, ProjectDetail> = {
 			"https://media.giphy.com/media/Q81NcsY6YxK7jxnr4v/giphy.gif",
 			"https://media.giphy.com/media/3o7qEcqN5PjN90jNC0/giphy.gif"
 		]
+	},
+	"crypto-deribit-option-trader": {
+		id: "crypto-deribit-option-trader",
+		title: "Crypto Deribit Option Trader",
+		description: "Created the infrastructure and software that trades option strategies with fastest latency possible on Deribit exchange",
+		category: "Cryptocurrency Trading",
+		client: "Crypto Trading Firm",
+		duration: "8 months",
+		technologies: ["Python", "C++", "WebSocket", "Deribit API", "Redis", "PostgreSQL", "Linux", "Docker"],
+		overview: "Built a high-performance automated trading system for options on the Deribit exchange, leveraging ultra-low latency infrastructure and advanced option trading strategies. The system executes trades with millisecond precision, monitors market conditions in real-time, and manages risk automatically.",
+		challenges: [
+			"Achieving ultra-low latency for competitive advantage in options trading",
+			"Implementing complex option Greeks calculations and hedging strategies",
+			"Managing risk across multiple positions and strategies",
+			"Handling high-frequency data streams and order execution"
+		],
+		solutions: [
+			"Optimized backend with C++ for critical path components",
+			"Direct WebSocket connection to Deribit with custom protocol optimization",
+			"Pre-calculated Greeks and dynamic hedging algorithms",
+			"Advanced position management and risk monitoring system"
+		],
+		features: [
+			"Ultra-low latency order execution (<10ms)",
+			"Real-time Greeks calculation (Delta, Gamma, Vega, Theta)",
+			"Automated hedging and risk management",
+			"Multi-strategy support and execution",
+			"Real-time P&L tracking and analytics",
+			"Order book monitoring and optimization",
+			"Automated position closing and rebalancing"
+		],
+		results: [
+			{ metric: "Order Latency", value: "<5ms" },
+			{ metric: "Execution Success", value: "99.8%" },
+			{ metric: "Win Rate", value: "72%" },
+			{ metric: "Daily Volume", value: "$2M+" }
+		],
+		videoUrl: "",
+		galleryImages: [],
+		galleryGifs: []
+	},
+	"champspace": {
+		id: "champspace",
+		title: "Champspace - Learn & Earn Platform",
+		description: "An edtech platform where students learn through courses and earn money by completing them",
+		category: "EdTech",
+		client: "champspace.in",
+		duration: "3 months",
+		technologies: ["React", "Node.js", "TypeScript", "MongoDB", "Stripe", "AWS", "WebRTC"],
+		overview: "Built a revolutionary learning management system that incentivizes education by paying students as they complete courses. The platform provides a seamless learning experience with video content, assessments, and a transparent reward mechanism that converts learning into real earnings.",
+		challenges: [
+			"Creating engaging course content delivery with video streaming",
+			"Implementing fair and transparent payment system for course completion",
+			"Building robust user progress tracking and verification",
+			"Ensuring platform scalability for thousands of concurrent learners"
+		],
+		solutions: [
+			"Developed adaptive learning interface with video streaming optimization",
+			"Integrated Stripe for secure payment processing and payouts",
+			"Built comprehensive progress verification and fraud detection system",
+			"Deployed on AWS with auto-scaling infrastructure"
+		],
+		features: [
+			"Video-based course content with progress tracking",
+			"Real-time earnings dashboard",
+			"Automated course completion verification",
+			"Secure payment and payout system",
+			"User certificates and credentials",
+			"Progress leaderboards and gamification",
+			"Instructor course management tools"
+		],
+		results: [
+			{ metric: "Active Students", value: "25,000+" },
+			{ metric: "Total Payouts", value: "$500K+" },
+			{ metric: "Course Completion", value: "78%" },
+			{ metric: "User Retention", value: "65%" }
+		],
+		videoUrl: "/videos/champspace/champspace.mp4",
+		galleryImages: [
+			"/images/champspace/champspaceimage1.PNG",
+			"/images/champspace/Champspaceimage2.PNG",
+			"/images/champspace/champspaceimage3.PNG",
+			"/images/champspace/champspaceimage4.PNG",
+			"/images/champspace/champspaceimage5.PNG"
+		],
+		galleryGifs: []
+	},
+	"adnow": {
+		id: "adnow",
+		title: "Adnow - Unified Ad Management Platform",
+		description: "A comprehensive ad agency solution providing one-centric management for all ads across Meta, Google, Amazon, and more",
+		category: "MarTech/AdTech",
+		client: "Digital Marketing Agency",
+		duration: "1 month",
+		technologies: ["React", "Node.js", "TypeScript", "Python", "PostgreSQL", "Redis", "AWS", "REST APIs"],
+		overview: "Developed a unified advertising management platform that consolidates campaign management across multiple advertising networks including Meta, Google, and Amazon. The platform provides centralized analytics, budget management, and campaign optimization across all channels from a single dashboard.",
+		challenges: [
+			"Integrating with multiple ad network APIs with different specifications",
+			"Unifying analytics data from disparate sources",
+			"Real-time bid management and budget optimization",
+			"Handling high-volume campaign data and reporting"
+		],
+		solutions: [
+			"Built abstraction layer for multi-platform ad network integration",
+			"Implemented unified analytics aggregation and normalization",
+			"Created intelligent budget allocation algorithms",
+			"Deployed data warehouse for efficient reporting"
+		],
+		features: [
+			"Unified dashboard for all advertising platforms",
+			"Multi-channel campaign creation and management",
+			"Real-time performance analytics and reporting",
+			"Intelligent budget allocation and optimization",
+			"A/B testing and experimentation framework",
+			"Automated bid management and adjustments",
+			"Comprehensive ROI and performance metrics"
+		],
+		results: [
+			{ metric: "Platforms Integrated", value: "8+" },
+			{ metric: "Monthly Campaigns", value: "5,000+" },
+			{ metric: "Spend Managed", value: "$50M+" },
+			{ metric: "ROAS Improvement", value: "40%" }
+		],
+		videoUrl: "/videos/adnow/adnowdemo.mp4",
+		galleryImages: [
+			"/images/adnow/adnowimage1.PNG",
+			"/images/adnow/adnowimage2.PNG",
+			"/images/adnow/adnowimage3.PNG",
+			"/images/adnow/adnowimage4.PNG"
+		],
+		galleryGifs: []
 	}
 };
+
+
 
 export default function ProjectDetails() {
 	const { projectId } = useParams<{ projectId: string }>();
@@ -323,11 +456,11 @@ export default function ProjectDetails() {
 									mainTitle="Video"
 									postTitle="Demo"
 								/>
-								<div className="mt-8 rounded-xl overflow-hidden border border-border bg-foreground/5 aspect-video">
+								<div className="mt-8 rounded-xl border border-border bg-foreground/5 min-h-[500px] flex items-center justify-center">
 									<video
 										src={project.videoUrl}
 										controls
-										className="w-full h-full object-cover"
+										className="w-full h-full object-contain max-h-[600px]"
 									>
 										Your browser does not support the video tag.
 									</video>

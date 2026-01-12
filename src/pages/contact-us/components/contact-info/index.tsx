@@ -65,8 +65,8 @@ export default function ContactInfo() {
 			<ContactCard
 				icon={<Mail className="text-background" size={28} />}
 				label="Email"
-				items={['Reach us via email for inquiries', 'contact@company.com']}
-				href="mailto:contact@company.com"
+				items={['Reach us via email for inquiries', 'priyanshu@opengridlabs.com']}
+				href="mailto:priyanshu@opengridlabs.com"
 				hrefItemIdx={1}
 			/>
 
