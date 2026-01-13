@@ -35,23 +35,23 @@ const faqs = [
 
 
 export default function AboutUs() {
-	return (
-		<>
-			<PageTitle
-				label="About Us"
-				mainTitle="Discover"
-				subTitle="company name"
-				description="Empowering businesses with innovative digital solutions, company transforms interactions through cutting-edge technology and forward-thinking strategies."
-			/>
+  return (
+    <>
+      <PageTitle
+        label="About Us"
+        mainTitle="Discover"
+        subTitle="OpenGridLabs"
+        description="Empowering businesses with innovative digital solutions, OpenGridLabs transforms interactions through cutting-edge technology and forward-thinking strategies."
+      />
 
-			<About />
+      <About />
 
-			<AboutHistory />
+      <AboutHistory />
 
-			<CoreValues />
+      <CoreValues />
 
-			<HomeFaq faqs={faqs} />
+      <HomeFaq faqs={faqs} />
 
-		</>
-	)
+    </>
+  )
 }

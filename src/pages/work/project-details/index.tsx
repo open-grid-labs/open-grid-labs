@@ -32,9 +32,9 @@ const projectsData: Record<string, ProjectDetail> = {
 		title: "Web application for microscopic scanner",
 		description: "A highly intuitive web application for microscopic scanner that streamlines workflows and improves accuracy.",
 		category: "Medical Technology",
-		client: "Medical Research Lab",
+		client: "Morphle Labs",
 		duration: "1 year",
-		technologies: ["React", "TypeScript", "WebGL", "Node.js", "Express", "MongoDB"],
+		technologies: ["React", "javascript", "python", "django", "java", "c++", "mysql", "nginx", "linux"],
 		overview: "Developed a cutting-edge web application for microscopic scanner that enables medical professionals to analyze microscopic images with enhanced precision. The application features real-time image processing, advanced zoom capabilities, and automated detection algorithms.",
 		challenges: [
 			"Processing high-resolution medical images in real-time without performance degradation",
@@ -58,10 +58,9 @@ const projectsData: Record<string, ProjectDetail> = {
 			"Cloud-based image storage and retrieval"
 		],
 		results: [
-			{ metric: "Processing Speed", value: "3x faster" },
-			{ metric: "Accuracy Improvement", value: "25%" },
-			{ metric: "User Satisfaction", value: "95%" },
-			{ metric: "Time Saved", value: "40%" }
+			{ metric: "Processing Speed", value: "10x faster" },
+			{ metric: "User Satisfaction", value: "100%" },
+			{ metric: "Time Saved", value: "500%" }
 		],
 		videoUrl: "/videos/microscopic-scanner/scanner.mp4",
 		galleryImages: [
@@ -122,9 +121,9 @@ const projectsData: Record<string, ProjectDetail> = {
 		title: "AirTrader – Trading Simulator Application",
 		description: "A robust and user-friendly trading simulator for strategy testing and decision-making.",
 		category: "Fintech",
-		client: "Financial Education Platform",
+		client: "ETG commodities",
 		duration: "6 months",
-		technologies: ["React", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Redis", "Chart.js"],
+		technologies: ["React", "typescript", "python", "django", "postgresql", "redis", "ChartIQ", "mongodb", "excel", "nginx", "linux"],
 		overview: "Developed a comprehensive trading simulator that allows users to practice trading strategies with real-time market data without risking real money. Features include portfolio management, technical analysis tools, and performance analytics.",
 		challenges: [
 			"Simulating realistic market conditions and order execution",
@@ -148,10 +147,9 @@ const projectsData: Record<string, ProjectDetail> = {
 			"Educational resources and tutorials"
 		],
 		results: [
-			{ metric: "Active Users", value: "50,000+" },
-			{ metric: "Trades Simulated", value: "1M+" },
-			{ metric: "User Engagement", value: "45 min/session" },
-			{ metric: "Skill Improvement", value: "60%" }
+			{ metric: "Active Users", value: "1000" },
+			{ metric: "Trades Simulated", value: "1m+" },
+			{ metric: "Skill Improvement", value: "200%" }
 		],
 		videoUrl: "/videos/airtrader-trading-simulator/airtraderdemo.mp4",
 		galleryImages: [
@@ -309,7 +307,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		category: "EdTech",
 		client: "champspace.in",
 		duration: "3 months",
-		technologies: ["React", "Node.js", "TypeScript", "MongoDB", "Stripe", "AWS", "WebRTC"],
+		technologies: ["React", "Django", "TypeScript", "MongoDB", "Stripe", "AWS"],
 		overview: "Built a revolutionary learning management system that incentivizes education by paying students as they complete courses. The platform provides a seamless learning experience with video content, assessments, and a transparent reward mechanism that converts learning into real earnings.",
 		challenges: [
 			"Creating engaging course content delivery with video streaming",
@@ -334,7 +332,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		],
 		results: [
 			{ metric: "Active Students", value: "25,000+" },
-			{ metric: "Total Payouts", value: "$500K+" },
+			{ metric: "Total Payouts", value: "$10k+" },
 			{ metric: "Course Completion", value: "78%" },
 			{ metric: "User Retention", value: "65%" }
 		],
@@ -354,8 +352,8 @@ const projectsData: Record<string, ProjectDetail> = {
 		description: "A comprehensive ad agency solution providing one-centric management for all ads across Meta, Google, Amazon, and more",
 		category: "MarTech/AdTech",
 		client: "Digital Marketing Agency",
-		duration: "1 month",
-		technologies: ["React", "Node.js", "TypeScript", "Python", "PostgreSQL", "Redis", "AWS", "REST APIs"],
+		duration: "1 month and active",
+		technologies: ["React", "Django", "TypeScript", "Python", "PostgreSQL", "Redis", "AWS", "REST APIs"],
 		overview: "Developed a unified advertising management platform that consolidates campaign management across multiple advertising networks including Meta, Google, and Amazon. The platform provides centralized analytics, budget management, and campaign optimization across all channels from a single dashboard.",
 		challenges: [
 			"Integrating with multiple ad network APIs with different specifications",
@@ -380,8 +378,8 @@ const projectsData: Record<string, ProjectDetail> = {
 		],
 		results: [
 			{ metric: "Platforms Integrated", value: "8+" },
-			{ metric: "Monthly Campaigns", value: "5,000+" },
-			{ metric: "Spend Managed", value: "$50M+" },
+			{ metric: "Monthly Campaigns", value: "500+" },
+			{ metric: "Spend Managed", value: "$10k+" },
 			{ metric: "ROAS Improvement", value: "40%" }
 		],
 		videoUrl: "/videos/adnow/adnowdemo.mp4",
@@ -391,6 +389,46 @@ const projectsData: Record<string, ProjectDetail> = {
 			"/images/adnow/adnowimage3.PNG",
 			"/images/adnow/adnowimage4.PNG"
 		],
+		galleryGifs: []
+	},
+	"curiote": {
+		id: "curiote",
+		title: "Curiote - Sentiment Analysis Tool",
+		description: "Advanced sentiment analysis tool enabling real-time market insights for stocks and crypto.",
+		category: "Fintech / Blockchain",
+		client: "Curiote",
+		duration: "5 months and Continue",
+		technologies: ["React", "typescript", "python", "django", "postgresql", "redis", "ChartIQ", "mongodb", "excel", "nginx", "linux", "NLP", "Machine Learning"],
+		overview: "Developed a powerful sentiment analysis tool that aggregates and analyzes data from various sources to provide real-time market sentiment for stocks and cryptocurrencies.",
+		challenges: [
+			"Aggregating data from diverse and unstructured sources",
+			"Real-time processing of high-volume social media streams",
+			"Developing accurate sentiment scoring models",
+			"Visualizing complex sentiment trends effectively"
+		],
+		solutions: [
+			"Implemented advanced NLP pipelines for text analysis",
+			"Utilized high-performance message queues for data ingestion",
+			"Trained custom ML models on financial datasets",
+			"Created interactive dashboards with dynamic charting"
+		],
+		features: [
+			"Real-time sentiment scoring",
+			"Social media trend analysis",
+			"News correlation with price action",
+			"Customizable alerts and notifications",
+			"Historical sentiment backtesting",
+			"Multi-asset support (Stocks & Crypto)",
+			"API access for algorithmic trading"
+		],
+		results: [
+			{ metric: "Data Sources", value: "20+" },
+			{ metric: "Processing Speed", value: "<100ms" },
+			{ metric: "Accuracy", value: "85%" },
+			{ metric: "User Growth", value: "40% MoM" }
+		],
+		videoUrl: "",
+		galleryImages: [],
 		galleryGifs: []
 	}
 };
@@ -411,7 +449,7 @@ export default function ProjectDetails() {
 			<PageTitle
 				label={project.category}
 				mainTitle={project.title}
-				subTitle="Project Details"
+				subTitle="Project Detail"
 				description={project.description}
 			/>
 

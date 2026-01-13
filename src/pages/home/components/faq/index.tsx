@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Plus } from "lucide-react";
 import PageHeading2 from "../../../../components/page-heading-2";
-import ButtonLink from "../../../../components/ui/button-link.tsx";
+import Button from "../../../../components/ui/button";
 
 type faqItem = {
 	id: number
@@ -39,6 +39,14 @@ export default function HomeFaq({
 			}
 		});
 	}, [openId]);
+
+	const handleBookCall = () => {
+		if ((window as any).Calendly) {
+			(window as any).Calendly.initPopupWidget({
+				url: 'https://calendly.com/priyanshud/contact-us'
+			});
+		}
+	};
 
 	return (
 		<section id="home-faq" className="w-full flex flex-col gap-10">
@@ -92,9 +100,9 @@ export default function HomeFaq({
 						Learn more about how we work and how we can help you and your business take the next step.
 					</p>
 
-					<ButtonLink to="/contact-us" className="sm:w-full z-10 relative">
+					<Button onClick={handleBookCall} className="sm:w-full z-10 relative">
 						Schedule Now
-					</ButtonLink>
+					</Button>
 				</div>
 			</div>
 		</section>

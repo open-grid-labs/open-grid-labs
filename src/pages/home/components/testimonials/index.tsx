@@ -9,20 +9,8 @@ const reviews = [
     rating: 5,
     comment: "The web application for microscopic scanner is incredibly intuitive. It has streamlined our workflow and improved accuracy tremendously.",
   },
-  {
-    name: "Chris DuPont",
-    role: "CEO at Galen Data",
-    image: "founders/chris-dupont.jpeg",
-    rating: 5,
-    comment: "The cloud platform for medical devices is seamless and reliable. It has transformed how our team manages and analyzes device data.",
-  },
-  {
-    name: "Abbas Dhilawala",
-    role: "CTO at Matrix One",
-    image: "founders/abbas-dhilawala.avif",
-    rating: 4,
-    comment: "The tools are well-designed and effective. The overall experience has been positive and productive.",
-  },
+
+
   {
     name: "Salim Boutaleb",
     role: "Head Of Quants at ETG",

@@ -28,7 +28,7 @@ const footerLinks = {
 };
 
 export const socialLinks = [
-  { icon: <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />, href: "https://www.linkedin.com/in/priyanshud", label: "LinkedIn" },
+  { icon: <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />, href: "https://www.linkedin.com/company/opengridlabs", label: "LinkedIn" },
 ];
 
 const Footer = () => {
@@ -110,7 +110,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="pt-8 border-t border-border text-center text-muted-foreground"
         >
-          <p>© {currentYear} PDxWork. All rights reserved.</p>
+          <p>© {currentYear} OpenGridLabs. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>
