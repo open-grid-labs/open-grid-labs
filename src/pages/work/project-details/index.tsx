@@ -307,7 +307,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		category: "EdTech",
 		client: "champspace.in",
 		duration: "3 months",
-		technologies: ["React", "Node.js", "TypeScript", "MongoDB", "Stripe", "AWS", "WebRTC"],
+		technologies: ["React", "Django", "TypeScript", "MongoDB", "Stripe", "AWS"],
 		overview: "Built a revolutionary learning management system that incentivizes education by paying students as they complete courses. The platform provides a seamless learning experience with video content, assessments, and a transparent reward mechanism that converts learning into real earnings.",
 		challenges: [
 			"Creating engaging course content delivery with video streaming",
@@ -332,7 +332,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		],
 		results: [
 			{ metric: "Active Students", value: "25,000+" },
-			{ metric: "Total Payouts", value: "$500K+" },
+			{ metric: "Total Payouts", value: "$10k+" },
 			{ metric: "Course Completion", value: "78%" },
 			{ metric: "User Retention", value: "65%" }
 		],
@@ -353,7 +353,7 @@ const projectsData: Record<string, ProjectDetail> = {
 		category: "MarTech/AdTech",
 		client: "Digital Marketing Agency",
 		duration: "1 month and active",
-		technologies: ["React", "Node.js", "TypeScript", "Python", "PostgreSQL", "Redis", "AWS", "REST APIs"],
+		technologies: ["React", "Django", "TypeScript", "Python", "PostgreSQL", "Redis", "AWS", "REST APIs"],
 		overview: "Developed a unified advertising management platform that consolidates campaign management across multiple advertising networks including Meta, Google, and Amazon. The platform provides centralized analytics, budget management, and campaign optimization across all channels from a single dashboard.",
 		challenges: [
 			"Integrating with multiple ad network APIs with different specifications",
@@ -378,8 +378,8 @@ const projectsData: Record<string, ProjectDetail> = {
 		],
 		results: [
 			{ metric: "Platforms Integrated", value: "8+" },
-			{ metric: "Monthly Campaigns", value: "5,000+" },
-			{ metric: "Spend Managed", value: "$50M+" },
+			{ metric: "Monthly Campaigns", value: "500+" },
+			{ metric: "Spend Managed", value: "$10k+" },
 			{ metric: "ROAS Improvement", value: "40%" }
 		],
 		videoUrl: "/videos/adnow/adnowdemo.mp4",
@@ -389,6 +389,46 @@ const projectsData: Record<string, ProjectDetail> = {
 			"/images/adnow/adnowimage3.PNG",
 			"/images/adnow/adnowimage4.PNG"
 		],
+		galleryGifs: []
+	},
+	"curiote": {
+		id: "curiote",
+		title: "Curiote - Sentiment Analysis Tool",
+		description: "Advanced sentiment analysis tool enabling real-time market insights for stocks and crypto.",
+		category: "Fintech / Blockchain",
+		client: "Curiote",
+		duration: "5 months and Continue",
+		technologies: ["React", "typescript", "python", "django", "postgresql", "redis", "ChartIQ", "mongodb", "excel", "nginx", "linux", "NLP", "Machine Learning"],
+		overview: "Developed a powerful sentiment analysis tool that aggregates and analyzes data from various sources to provide real-time market sentiment for stocks and cryptocurrencies.",
+		challenges: [
+			"Aggregating data from diverse and unstructured sources",
+			"Real-time processing of high-volume social media streams",
+			"Developing accurate sentiment scoring models",
+			"Visualizing complex sentiment trends effectively"
+		],
+		solutions: [
+			"Implemented advanced NLP pipelines for text analysis",
+			"Utilized high-performance message queues for data ingestion",
+			"Trained custom ML models on financial datasets",
+			"Created interactive dashboards with dynamic charting"
+		],
+		features: [
+			"Real-time sentiment scoring",
+			"Social media trend analysis",
+			"News correlation with price action",
+			"Customizable alerts and notifications",
+			"Historical sentiment backtesting",
+			"Multi-asset support (Stocks & Crypto)",
+			"API access for algorithmic trading"
+		],
+		results: [
+			{ metric: "Data Sources", value: "20+" },
+			{ metric: "Processing Speed", value: "<100ms" },
+			{ metric: "Accuracy", value: "85%" },
+			{ metric: "User Growth", value: "40% MoM" }
+		],
+		videoUrl: "",
+		galleryImages: [],
 		galleryGifs: []
 	}
 };
@@ -409,7 +449,7 @@ export default function ProjectDetails() {
 			<PageTitle
 				label={project.category}
 				mainTitle={project.title}
-				subTitle="Project Details"
+				subTitle="Project Detail"
 				description={project.description}
 			/>
 

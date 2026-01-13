@@ -26,11 +26,11 @@ export default function TermsOfUse() {
 				</Card>
 
 				<Card title="Intellectual Property">
-					All content on this website, including text, graphics, logos, and images, is the property of PDxWork or its licensors. You may not copy, reproduce, or distribute any content without prior written permission.
+					All content on this website, including text, graphics, logos, and images, is the property of OpenGridLabs or its licensors. You may not copy, reproduce, or distribute any content without prior written permission.
 				</Card>
 
 				<Card title="Limitation of Liability">
-					PDxWork is not liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use the website.
+					OpenGridLabs is not liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use the website.
 				</Card>
 
 				<Card title="External Links">

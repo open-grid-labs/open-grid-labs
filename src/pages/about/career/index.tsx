@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PageTitle from "../../../components/page-title";
 import PageHeading from "../../../components/page-heading";
-import { Briefcase, Code, TestTube, Shield, Users, Megaphone, GraduationCap, MapPin, Clock, ChevronDown, ChevronUp, Send, X } from "lucide-react";
+import { Briefcase, GraduationCap, MapPin, Clock, ChevronDown, ChevronUp, Send, X } from "lucide-react";
 import { toast } from "react-toastify";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -21,163 +21,7 @@ interface JobPosition {
 }
 
 const jobPositions: JobPosition[] = [
-	// Full-time Positions
-	{
-		id: "software-developer",
-		title: "Software Developer",
-		department: "Engineering",
-		type: "Full-time",
-		location: "Remote / On-site",
-		experience: "2-5 years",
-		description: "We're looking for a talented Software Developer to join our engineering team. You'll work on cutting-edge projects, building scalable web and mobile applications using modern technologies.",
-		responsibilities: [
-			"Design, develop, and maintain high-quality software applications",
-			"Collaborate with cross-functional teams to define and implement new features",
-			"Write clean, maintainable, and well-documented code",
-			"Participate in code reviews and provide constructive feedback",
-			"Troubleshoot and debug applications to optimize performance",
-			"Stay up-to-date with emerging technologies and industry trends"
-		],
-		requirements: [
-			"Bachelor's degree in Computer Science or related field",
-			"2+ years of experience in software development",
-			"Proficiency in React, TypeScript, and Node.js",
-			"Experience with databases (PostgreSQL, MongoDB)",
-			"Strong problem-solving and analytical skills",
-			"Excellent communication and teamwork abilities"
-		],
-		niceToHave: [
-			"Experience with cloud platforms (AWS, GCP, Azure)",
-			"Knowledge of CI/CD pipelines",
-			"Contributions to open-source projects"
-		],
-		icon: <Code className="w-6 h-6" />
-	},
-	{
-		id: "sdet",
-		title: "SDET (Software Development Engineer in Test)",
-		department: "Quality Engineering",
-		type: "Full-time",
-		location: "Remote / On-site",
-		experience: "2-4 years",
-		description: "Join our Quality Engineering team as an SDET to build robust test automation frameworks and ensure the highest quality of our software products.",
-		responsibilities: [
-			"Design and develop automated test frameworks and scripts",
-			"Create and maintain CI/CD pipeline integrations for testing",
-			"Perform API, integration, and end-to-end testing",
-			"Collaborate with developers to implement testable code",
-			"Analyze test results and report defects with detailed information",
-			"Continuously improve testing processes and methodologies"
-		],
-		requirements: [
-			"Bachelor's degree in Computer Science or related field",
-			"2+ years of experience in test automation",
-			"Proficiency in testing frameworks (Selenium, Cypress, Playwright)",
-			"Strong programming skills in JavaScript/TypeScript or Python",
-			"Experience with API testing tools (Postman, REST Assured)",
-			"Understanding of Agile/Scrum methodologies"
-		],
-		niceToHave: [
-			"Experience with performance testing tools (JMeter, k6)",
-			"Knowledge of containerization (Docker, Kubernetes)",
-			"ISTQB or similar certification"
-		],
-		icon: <Shield className="w-6 h-6" />
-	},
-	{
-		id: "quality-tester",
-		title: "Quality Tester",
-		department: "Quality Assurance",
-		type: "Full-time",
-		location: "Remote / On-site",
-		experience: "1-3 years",
-		description: "We're seeking a detail-oriented Quality Tester to ensure our products meet the highest standards of quality and user experience.",
-		responsibilities: [
-			"Execute manual and exploratory testing on web and mobile applications",
-			"Create comprehensive test cases and test plans",
-			"Document and track bugs using issue tracking systems",
-			"Verify bug fixes and perform regression testing",
-			"Collaborate with developers and product managers",
-			"Participate in sprint planning and review meetings"
-		],
-		requirements: [
-			"1+ years of experience in software testing",
-			"Strong understanding of QA methodologies and processes",
-			"Experience with bug tracking tools (Jira, Azure DevOps)",
-			"Excellent attention to detail and analytical skills",
-			"Good written and verbal communication skills",
-			"Basic understanding of web technologies (HTML, CSS, JavaScript)"
-		],
-		niceToHave: [
-			"Experience with test management tools (TestRail, Zephyr)",
-			"Basic knowledge of SQL",
-			"Familiarity with Agile/Scrum practices"
-		],
-		icon: <TestTube className="w-6 h-6" />
-	},
-	{
-		id: "project-manager",
-		title: "Project Manager",
-		department: "Project Management",
-		type: "Full-time",
-		location: "Remote / On-site",
-		experience: "3-6 years",
-		description: "Lead and deliver successful projects by coordinating cross-functional teams, managing timelines, and ensuring client satisfaction.",
-		responsibilities: [
-			"Plan, execute, and close projects on time and within budget",
-			"Define project scope, goals, and deliverables",
-			"Coordinate internal resources and third-party vendors",
-			"Manage project risks and develop mitigation strategies",
-			"Communicate project status to stakeholders and clients",
-			"Ensure resource availability and optimal allocation"
-		],
-		requirements: [
-			"Bachelor's degree in Business, IT, or related field",
-			"3+ years of project management experience in IT/Software",
-			"Proficiency in project management tools (Jira, Asana, MS Project)",
-			"Strong understanding of Agile and Waterfall methodologies",
-			"Excellent leadership and interpersonal skills",
-			"PMP or Scrum Master certification preferred"
-		],
-		niceToHave: [
-			"Experience managing remote teams",
-			"Technical background in software development",
-			"Client-facing experience"
-		],
-		icon: <Users className="w-6 h-6" />
-	},
-	{
-		id: "marketing-expert",
-		title: "Project Marketing Expert",
-		department: "Marketing",
-		type: "Full-time",
-		location: "Remote / On-site",
-		experience: "2-5 years",
-		description: "Drive our marketing initiatives and help us reach new audiences through creative campaigns, content strategy, and digital marketing.",
-		responsibilities: [
-			"Develop and execute marketing strategies for projects and services",
-			"Create compelling content for various platforms (website, social media, email)",
-			"Manage digital marketing campaigns (SEO, SEM, social media ads)",
-			"Analyze marketing metrics and optimize campaigns",
-			"Collaborate with sales team to generate and nurture leads",
-			"Build and maintain relationships with industry influencers"
-		],
-		requirements: [
-			"Bachelor's degree in Marketing, Communications, or related field",
-			"2+ years of experience in B2B or tech marketing",
-			"Proficiency in digital marketing tools (Google Analytics, HubSpot, SEMrush)",
-			"Strong content writing and storytelling skills",
-			"Experience with social media marketing and management",
-			"Data-driven mindset with analytical capabilities"
-		],
-		niceToHave: [
-			"Experience in IT/Software industry marketing",
-			"Knowledge of marketing automation tools",
-			"Graphic design skills (Figma, Canva)"
-		],
-		icon: <Megaphone className="w-6 h-6" />
-	},
-	// Intern Positions
+
 	{
 		id: "software-developer-intern",
 		title: "Software Developer Intern",
@@ -204,120 +48,17 @@ const jobPositions: JobPosition[] = [
 		],
 		icon: <GraduationCap className="w-6 h-6" />
 	},
-	{
-		id: "sdet-intern",
-		title: "SDET Intern",
-		department: "Quality Engineering",
-		type: "Intern",
-		location: "Remote / On-site",
-		experience: "Fresher / Students",
-		description: "Learn test automation and quality engineering from industry experts. Build your career in the growing field of software testing.",
-		responsibilities: [
-			"Learn and implement test automation frameworks",
-			"Write automated test scripts under guidance",
-			"Assist in API and integration testing",
-			"Document test cases and results",
-			"Participate in QA team activities",
-			"Learn CI/CD integration for testing"
-		],
-		requirements: [
-			"Currently pursuing or recently completed degree in CS/IT",
-			"Basic programming knowledge",
-			"Interest in software testing and quality assurance",
-			"Attention to detail",
-			"Willingness to learn testing tools and frameworks",
-			"Good analytical and problem-solving skills"
-		],
-		icon: <GraduationCap className="w-6 h-6" />
-	},
-	{
-		id: "quality-tester-intern",
-		title: "Quality Tester Intern",
-		department: "Quality Assurance",
-		type: "Intern",
-		location: "Remote / On-site",
-		experience: "Fresher / Students",
-		description: "Start your QA journey with us! Learn software testing fundamentals and gain practical experience in ensuring product quality.",
-		responsibilities: [
-			"Execute test cases on web and mobile applications",
-			"Learn to write effective test cases",
-			"Report bugs and track issues",
-			"Assist in regression testing",
-			"Learn QA tools and methodologies",
-			"Participate in team meetings and reviews"
-		],
-		requirements: [
-			"Currently pursuing or recently completed degree in CS/IT",
-			"Basic understanding of software development lifecycle",
-			"Strong attention to detail",
-			"Good written communication skills",
-			"Curiosity and willingness to learn",
-			"Basic computer and internet skills"
-		],
-		icon: <GraduationCap className="w-6 h-6" />
-	},
-	{
-		id: "project-manager-intern",
-		title: "Project Manager Intern",
-		department: "Project Management",
-		type: "Intern",
-		location: "Remote / On-site",
-		experience: "Fresher / Students",
-		description: "Learn the art of project management! Gain exposure to real projects and develop skills in planning, coordination, and leadership.",
-		responsibilities: [
-			"Assist project managers in daily activities",
-			"Help maintain project documentation",
-			"Coordinate meetings and prepare minutes",
-			"Track project tasks and timelines",
-			"Learn project management tools and methodologies",
-			"Support in client communication"
-		],
-		requirements: [
-			"Currently pursuing degree in Business, IT, or related field",
-			"Strong organizational skills",
-			"Proficiency in MS Office / Google Workspace",
-			"Excellent communication skills",
-			"Ability to multitask and prioritize",
-			"Interest in IT/Software industry"
-		],
-		icon: <GraduationCap className="w-6 h-6" />
-	},
-	{
-		id: "marketing-intern",
-		title: "Marketing Intern",
-		department: "Marketing",
-		type: "Intern",
-		location: "Remote / On-site",
-		experience: "Fresher / Students",
-		description: "Explore the world of digital marketing! Learn content creation, social media management, and marketing analytics.",
-		responsibilities: [
-			"Assist in creating marketing content",
-			"Manage social media posts and engagement",
-			"Help with email marketing campaigns",
-			"Research industry trends and competitors",
-			"Support in marketing analytics and reporting",
-			"Assist in event planning and execution"
-		],
-		requirements: [
-			"Currently pursuing degree in Marketing, Communications, or related field",
-			"Strong writing and communication skills",
-			"Familiarity with social media platforms",
-			"Creative mindset",
-			"Basic knowledge of design tools is a plus",
-			"Enthusiasm for digital marketing"
-		],
-		icon: <GraduationCap className="w-6 h-6" />
-	}
+
 ];
 
 // Application Form Modal
-function ApplicationModal({ 
-	isOpen, 
-	onClose, 
-	selectedPosition 
-}: { 
-	isOpen: boolean; 
-	onClose: () => void; 
+function ApplicationModal({
+	isOpen,
+	onClose,
+	selectedPosition
+}: {
+	isOpen: boolean;
+	onClose: () => void;
 	selectedPosition: string;
 }) {
 	const [formData, setFormData] = useState({
@@ -338,7 +79,7 @@ function ApplicationModal({
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		
+
 		let newErrors: Record<string, string> = {};
 
 		if (!formData.name.trim()) newErrors.name = "Name is required";
@@ -358,7 +99,7 @@ function ApplicationModal({
 		fd.append("access_key", "7ce8502f-e86a-4944-a377-30c9e87456ad");
 		fd.append("subject", `Job Application: ${formData.position} - ${formData.name}`);
 		fd.append("from_name", formData.name);
-		
+
 		// Form fields
 		fd.append("Name", formData.name);
 		fd.append("Email", formData.email);
@@ -375,9 +116,9 @@ function ApplicationModal({
 				body: fd
 			});
 			const data = await response.json();
-			
+
 			console.log("Web3Forms response:", data);
-			
+
 			if (data.success) {
 				toast.success("Application submitted successfully!");
 				setFormData({
@@ -397,7 +138,7 @@ function ApplicationModal({
 			console.error("Submit error:", error);
 			toast.error("Network error. Please check your connection and try again.");
 		}
-		
+
 		setLoading(false);
 	};
 
@@ -408,11 +149,11 @@ function ApplicationModal({
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
 			{/* Backdrop */}
-			<div 
+			<div
 				className="absolute inset-0 bg-black/70 backdrop-blur-sm"
 				onClick={onClose}
 			/>
-			
+
 			{/* Modal */}
 			<div className="relative bg-background border border-border rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
 				{/* Header */}
@@ -662,7 +403,6 @@ function JobCard({ job, isExpanded, onToggle, onApply }: { job: JobPosition; isE
 
 export default function Career() {
 	const [expandedJob, setExpandedJob] = useState<string | null>(null);
-	const [filter, setFilter] = useState<"all" | "Full-time" | "Intern">("all");
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [selectedPosition, setSelectedPosition] = useState("");
 
@@ -670,13 +410,6 @@ export default function Career() {
 		setSelectedPosition(position);
 		setIsModalOpen(true);
 	};
-
-	const filteredJobs = filter === "all" 
-		? jobPositions 
-		: jobPositions.filter(job => job.type === filter);
-
-	const fullTimeJobs = jobPositions.filter(job => job.type === "Full-time");
-	const internJobs = jobPositions.filter(job => job.type === "Intern");
 
 	return (
 		<>
@@ -688,40 +421,7 @@ export default function Career() {
 			/>
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
-				{/* Why Join Us Section */}
-				<section>
-					<PageHeading
-						preTitle="Why"
-						mainTitle="Join Us"
-						postTitle=""
-						icon={Briefcase}
-					/>
-					<div className="mt-8 grid md:grid-cols-3 gap-6">
-						<div className="bg-foreground/5 border border-border rounded-xl p-6 text-center">
-							<div className="w-12 h-12 bg-foreground/10 rounded-full flex items-center justify-center mx-auto mb-4">
-								<Code className="w-6 h-6 text-foreground" />
-							</div>
-							<h3 className="text-xl font-bold text-foreground mb-2">Cutting-Edge Tech</h3>
-							<p className="text-muted-foreground">Work with the latest technologies and tools on exciting projects across various domains.</p>
-						</div>
-						<div className="bg-foreground/5 border border-border rounded-xl p-6 text-center">
-							<div className="w-12 h-12 bg-foreground/10 rounded-full flex items-center justify-center mx-auto mb-4">
-								<GraduationCap className="w-6 h-6 text-foreground" />
-							</div>
-							<h3 className="text-xl font-bold text-foreground mb-2">Continuous Learning</h3>
-							<p className="text-muted-foreground">Grow your skills with mentorship, training programs, and opportunities to learn from experts.</p>
-						</div>
-						<div className="bg-foreground/5 border border-border rounded-xl p-6 text-center">
-							<div className="w-12 h-12 bg-foreground/10 rounded-full flex items-center justify-center mx-auto mb-4">
-								<Users className="w-6 h-6 text-foreground" />
-							</div>
-							<h3 className="text-xl font-bold text-foreground mb-2">Great Culture</h3>
-							<p className="text-muted-foreground">Be part of a collaborative, inclusive team that values innovation and work-life balance.</p>
-						</div>
-					</div>
-				</section>
 
-				{/* Filter Tabs */}
 				<section>
 					<PageHeading
 						preTitle="Open"
@@ -729,30 +429,10 @@ export default function Career() {
 						postTitle=""
 						icon={Briefcase}
 					/>
-					<div className="mt-8 flex flex-wrap gap-4 mb-8">
-						<button
-							onClick={() => setFilter("all")}
-							className={`px-6 py-2 rounded-xl font-medium transition-colors ${filter === "all" ? "bg-foreground text-background" : "bg-foreground/10 text-foreground hover:bg-foreground/20"}`}
-						>
-							All ({jobPositions.length})
-						</button>
-						<button
-							onClick={() => setFilter("Full-time")}
-							className={`px-6 py-2 rounded-xl font-medium transition-colors ${filter === "Full-time" ? "bg-foreground text-background" : "bg-foreground/10 text-foreground hover:bg-foreground/20"}`}
-						>
-							Full-time ({fullTimeJobs.length})
-						</button>
-						<button
-							onClick={() => setFilter("Intern")}
-							className={`px-6 py-2 rounded-xl font-medium transition-colors ${filter === "Intern" ? "bg-foreground text-background" : "bg-foreground/10 text-foreground hover:bg-foreground/20"}`}
-						>
-							Internships ({internJobs.length})
-						</button>
-					</div>
 
 					{/* Job Listings */}
-					<div className="space-y-4">
-						{filteredJobs.map((job) => (
+					<div className="mt-8 space-y-4">
+						{jobPositions.map((job) => (
 							<JobCard
 								key={job.id}
 								job={job}

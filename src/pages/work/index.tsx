@@ -51,6 +51,12 @@ const projects = [
 			"A comprehensive ad agency solution providing one-centric management for all ads across Meta, Google, Amazon, and more",
 		href: "/work/adnow",
 	},
+	{
+		title: "Curiote - Sentiment Analysis Tool",
+		description:
+			"Advanced sentiment analysis tool enabling real-time market insights for stocks and crypto.",
+		href: "/work/curiote",
+	},
 ];
 
 

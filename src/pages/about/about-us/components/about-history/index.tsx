@@ -1,22 +1,27 @@
-import { Lightbulb, Mic, Rocket } from "lucide-react";
+import { Activity, Megaphone, TrendingUp, Zap } from "lucide-react";
 import PageHeading from "../../../../../components/page-heading";
 import type { ReactNode } from "react";
 
 const timelineData = [
   {
-    year: "2019",
-    description: "Develop cross-platform apps for Android and iOS with seamless user experience.",
-    icon: <Rocket />,
+    year: "2022",
+    description: "Partnered with Morphle Labs and Healthcare Tech Companies to build microscopic scanner software and cloud platforms for medical devices.",
+    icon: <Activity />,
   },
   {
-    year: "2022",
-    description: "Expanded services to include AI-powered analytics and real-time solutions for global clients.",
-    icon: <Lightbulb />,
+    year: "2023",
+    description: "Developed 'AirTrader' trading simulator and an advanced Tread Pattern Monitoring System for automotive manufacturing.",
+    icon: <TrendingUp />,
+  },
+  {
+    year: "2024",
+    description: "Launched sophisticated Crypto Analytical Tools, a High-Frequency Option Trader, and the 'Champspace' Learn & Earn platform.",
+    icon: <Zap />,
   },
   {
     year: "2025",
-    description: "Build the News App real-time, reliable, news to users across the globe.",
-    icon: <Mic />,
+    description: "Released 'Adnow', a unified advertising management platform consolidating Meta, Google, and Amazon campaigns.",
+    icon: <Megaphone />,
   },
 ];
 

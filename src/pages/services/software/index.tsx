@@ -3,7 +3,8 @@ import OtherServices from "../components/other-services";
 import ToolsWeUse from "../components/tools-we-use";
 import ServiceDetailsWeServe from "../components/we-serve";
 import WorkingStep from "../components/working-step";
-import { faAws, faDocker, faFigma, faGitAlt, faOpenai, faSlack } from "@fortawesome/free-brands-svg-icons";
+import { faAws, faDocker, faJava, faJs, faLinux, faPython, faReact, faStripe } from "@fortawesome/free-brands-svg-icons";
+import { BarChart, Brain, Code, Database, FileCode, FileSpreadsheet, LineChart, Network, PieChart, Radio, Server, Terminal, Webhook } from "lucide-react";
 
 
 const webAppItems = [
@@ -64,12 +65,32 @@ const steps = [
 ];
 
 const tools = [
-	{ icon: faGitAlt, name: "Git" },
-	{ icon: faFigma, name: "Figma" },
-	{ icon: faOpenai, name: "OpenAI" },
-	{ icon: faDocker, name: "Docker" },
+	{ icon: faReact, name: "React" },
+	{ icon: faJs, name: "JavaScript" },
+	{ icon: <FileCode className="text-primary w-12 h-12" />, name: "TypeScript" },
+	{ icon: faPython, name: "Python" },
+	{ icon: <FileCode className="text-primary w-12 h-12" />, name: "Django" },
+	{ icon: faJava, name: "Java" },
+	{ icon: <Code className="text-primary w-12 h-12" />, name: "C++" },
+	{ icon: <Database className="text-primary w-12 h-12" />, name: "MySQL" },
+	{ icon: <Database className="text-primary w-12 h-12" />, name: "PostgreSQL" },
+	{ icon: <Database className="text-primary w-12 h-12" />, name: "MongoDB" },
+	{ icon: <Database className="text-primary w-12 h-12" />, name: "Redis" },
 	{ icon: faAws, name: "AWS" },
-	{ icon: faSlack, name: "Slack" },
+	{ icon: faDocker, name: "Docker" },
+	{ icon: <Server className="text-primary w-12 h-12" />, name: "Kubernetes" },
+	{ icon: faLinux, name: "Linux" },
+	{ icon: <Server className="text-primary w-12 h-12" />, name: "Nginx" },
+	{ icon: faStripe, name: "Stripe" },
+	{ icon: <Network className="text-primary w-12 h-12" />, name: "WebSocket" },
+	{ icon: <BarChart className="text-primary w-12 h-12" />, name: "D3.js" },
+	{ icon: <LineChart className="text-primary w-12 h-12" />, name: "ChartIQ" },
+	{ icon: <Brain className="text-primary w-12 h-12" />, name: "TensorFlow" },
+	{ icon: <Radio className="text-primary w-12 h-12" />, name: "MQTT" },
+	{ icon: <PieChart className="text-primary w-12 h-12" />, name: "Grafana" },
+	{ icon: <Terminal className="text-primary w-12 h-12" />, name: "Deribit API" },
+	{ icon: <Webhook className="text-primary w-12 h-12" />, name: "REST APIs" },
+	{ icon: <FileSpreadsheet className="text-primary w-12 h-12" />, name: "Excel" },
 ];
 
 const otherServices = [
