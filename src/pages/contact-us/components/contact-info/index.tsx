@@ -59,6 +59,11 @@ export default function ContactInfo() {
 					"Alberta, Canada",
 					"London, UK",
 					"Munich, Germany"
+					"Sydney, Australia",
+					"Tokyo, Japan",
+					"Singapore",
+					"Dubai, UAE"
+
 				]}
 			/>
 
