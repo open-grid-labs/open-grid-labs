@@ -43,7 +43,7 @@ export default function HomeFaq({
 	const handleBookCall = () => {
 		if ((window as any).Calendly) {
 			(window as any).Calendly.initPopupWidget({
-				url: 'https://calendly.com/priyanshud/contact-us'
+				url: 'https://calendly.com/opengridlabs/30min?hide_landing_page_details=1&hide_gdpr_banner=1'
 			});
 		}
 	};
