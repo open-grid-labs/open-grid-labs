@@ -4,7 +4,7 @@ import PageHeading from "../../../../../components/page-heading";
 const teamMembers = [
 	{
 		role: "Leader",
-		title: "CEO and Engineer Head",
+		title: "Co-Founder & CTO",
 		name: "Priyanshu Dwivedi",
 		img: '/team/priyanshu.jpg',
 		department: "Leadership",
@@ -13,7 +13,7 @@ const teamMembers = [
 	},
 	{
 		role: "Strategic",
-		title: "Marketing Head",
+		title: "Co-Founder & CMO",
 		name: "Rohan Sharma",
 		img: '/team/rohan.jpg',
 		department: "Marketing",
@@ -22,7 +22,7 @@ const teamMembers = [
 	},
 	{
 		role: "Visionary",
-		title: "Senior Developer",
+		title: "Founding Team · Senior Developer",
 		name: "Aman",
 		img: '/team/aman.jpg',
 		department: "Engineering",
@@ -31,7 +31,7 @@ const teamMembers = [
 	},
 	{
 		role: "Intelligence",
-		title: "AI Head",
+		title: "Founding Team · AI Head",
 		name: "Ritilk Raushan",
 		img: '/team/ritilk.jpg',
 		department: "AI & Research",
@@ -40,7 +40,7 @@ const teamMembers = [
 	},
 	{
 		role: "Engaging",
-		title: "QA Head",
+		title: "Founding Team · SDET Lead",
 		name: "Munesh Kushwah",
 		img: '/team/munesh.jpg',
 		department: "Quality Assurance",
@@ -49,7 +49,7 @@ const teamMembers = [
 	},
 	{
 		role: "Reliable",
-		title: "DevOps Head",
+		title: "Founding Team · DevOps Head",
 		name: "Prashant Yadav",
 		img: '/team/prashant.jpg',
 		department: "DevOps",

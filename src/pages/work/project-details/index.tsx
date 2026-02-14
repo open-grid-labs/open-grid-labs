@@ -430,6 +430,51 @@ const projectsData: Record<string, ProjectDetail> = {
 		videoUrl: "",
 		galleryImages: [],
 		galleryGifs: []
+	},
+	"data-engineering-datascience": {
+		id: "data-engineering-datascience",
+		title: "Data Engineering & Data Science Platform",
+		description: "End-to-end data engineering and data science solution powering scalable pipelines, advanced analytics, and ML-driven insights.",
+		category: "Data Engineering / Data Science",
+		client: "Enterprise Analytics Firm",
+		duration: "6 months and active",
+		technologies: ["Python", "Apache Spark", "Apache Airflow", "Kafka", "Snowflake", "dbt", "PostgreSQL", "AWS S3", "Redshift", "Docker", "Kubernetes", "Pandas", "Scikit-learn", "TensorFlow", "Jupyter", "Tableau", "Power BI"],
+		overview: "Designed and built a comprehensive data engineering and data science platform that unifies data ingestion, transformation, warehousing, and machine learning workflows. The platform automates ETL/ELT pipelines to process terabytes of raw data from diverse sources, transforms it into analytics-ready datasets, and powers predictive models and interactive dashboards for data-driven decision making.",
+		challenges: [
+			"Ingesting and processing data from 50+ heterogeneous sources with varying formats and schemas",
+			"Building fault-tolerant, scalable ETL pipelines that handle terabyte-scale data volumes",
+			"Ensuring data quality, lineage tracking, and governance across the entire data lifecycle",
+			"Deploying and monitoring ML models in production with minimal latency",
+			"Providing self-service analytics capabilities to non-technical stakeholders"
+		],
+		solutions: [
+			"Built modular data ingestion framework with Apache Kafka for real-time streaming and Airflow for batch orchestration",
+			"Implemented a medallion architecture (Bronze, Silver, Gold) using dbt and Snowflake for reliable data transformation",
+			"Developed automated data quality checks, schema validation, and lineage tracking with custom metadata catalog",
+			"Created ML pipeline with feature store, model registry, and automated retraining using MLflow and Kubernetes",
+			"Deployed interactive Tableau and Power BI dashboards with real-time data refresh"
+		],
+		features: [
+			"Automated ETL/ELT pipelines with Apache Airflow orchestration",
+			"Real-time data streaming and event processing with Kafka",
+			"Data warehouse with medallion architecture (Bronze/Silver/Gold layers)",
+			"ML model training, deployment, and monitoring pipeline",
+			"Feature store for reusable ML features across teams",
+			"Interactive dashboards and self-service analytics",
+			"Data quality monitoring and anomaly detection",
+			"Data lineage tracking and governance",
+			"Predictive analytics and forecasting models"
+		],
+		results: [
+			{ metric: "Data Sources Integrated", value: "50+" },
+			{ metric: "Daily Data Processed", value: "2TB+" },
+			{ metric: "Pipeline Reliability", value: "99.9%" },
+			{ metric: "ML Model Accuracy", value: "92%" },
+			{ metric: "Reporting Speed Improvement", value: "10x faster" }
+		],
+		videoUrl: "",
+		galleryImages: [],
+		galleryGifs: []
 	}
 };
 

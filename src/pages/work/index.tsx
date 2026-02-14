@@ -57,6 +57,12 @@ const projects = [
 			"Advanced sentiment analysis tool enabling real-time market insights for stocks and crypto.",
 		href: "/work/curiote",
 	},
+	{
+		title: "Data Engineering & Data Science Platform",
+		description:
+			"End-to-end data engineering and data science solution powering scalable pipelines, advanced analytics, and ML-driven insights.",
+		href: "/work/data-engineering-datascience",
+	},
 ];
 
 
