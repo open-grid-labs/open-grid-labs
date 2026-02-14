@@ -15,7 +15,8 @@ function CalendlyWidget() {
 	return (
 		<div
 			className="calendly-inline-widget"
-			data-url="https://calendly.com/priyanshud/contact-us?primary_color=000000"
+			data-url="https://calendly.com/opengridlabs/30min?hide_landing_page_details=1&hide_gdpr_banner=1"
+			style={{ minWidth: '320px', height: '700px' }}
 		></div>
 	);
 }
