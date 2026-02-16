@@ -1,4 +1,5 @@
 import PageTitle from "../../../components/page-title";
+import SEO from "../../../components/seo";
 import OtherServices from "../components/other-services";
 import ToolsWeUse from "../components/tools-we-use";
 import ServiceDetailsWeServe from "../components/we-serve";
@@ -101,6 +102,12 @@ const otherServices = [
 export default function ServicesSoftware() {
 	return (
 		<>
+			<SEO
+				title="Software Development Services - Web, Mobile & Backend"
+				description="Custom software development services including web applications, mobile apps, backend systems, API development, and cloud solutions. Built with React, Python, Django, AWS, and more."
+				canonical="/services/software"
+				keywords="software development services, web app development, mobile app development, backend development, API development, React, Python, Django, AWS, cloud solutions"
+			/>
 			<PageTitle
 				label="Software"
 				mainTitle="Software"

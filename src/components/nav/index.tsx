@@ -78,6 +78,7 @@ const Nav = () => {
 	return (
 		<header>
 			<motion.nav
+				aria-label="Main navigation"
 				variants={{
 					visible: { y: 0 },
 					hidden: { y: '-150%' }

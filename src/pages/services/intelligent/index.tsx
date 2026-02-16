@@ -1,4 +1,5 @@
 import PageTitle from "../../../components/page-title";
+import SEO from "../../../components/seo";
 import OtherServices from "../components/other-services";
 import ToolsWeUse from "../components/tools-we-use";
 import ServiceDetailsWeServe from "../components/we-serve";
@@ -120,6 +121,12 @@ const otherServices = [
 export default function ServicesIntelligent() {
 	return (
 		<>
+			<SEO
+				title="AI & Machine Learning Services - Intelligent Solutions"
+				description="AI, machine learning, deep learning, and NLP services. We build intelligent solutions including agentic AI, LLMs, computer vision, sentiment analysis, and predictive analytics."
+				canonical="/services/intelligent"
+				keywords="AI services, machine learning, deep learning, NLP, artificial intelligence, computer vision, sentiment analysis, predictive analytics, LLM, agentic AI, RAG"
+			/>
 			<PageTitle
 				label="Intelligent"
 				mainTitle="Intelligent"

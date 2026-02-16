@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PageTitle from "../../../components/page-title";
+import SEO from "../../../components/seo";
 import PageHeading from "../../../components/page-heading";
 import { Briefcase, GraduationCap, MapPin, Clock, ChevronDown, ChevronUp, Send, X } from "lucide-react";
 import { toast } from "react-toastify";
@@ -413,6 +414,12 @@ export default function Career() {
 
 	return (
 		<>
+			<SEO
+				title="Careers at OpenGridLabs - Join Our Team"
+				description="Join OpenGridLabs and work on cutting-edge software, AI, and design projects. Explore open positions for developers, interns, and tech professionals. Remote and on-site opportunities available."
+				canonical="/about/career"
+				keywords="OpenGridLabs careers, software developer jobs, tech jobs, internship, remote jobs, AI engineer jobs, developer internship"
+			/>
 			<PageTitle
 				label="Join Our Team"
 				mainTitle="Career"

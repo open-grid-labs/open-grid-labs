@@ -1,10 +1,16 @@
 import Card from "../../components/card";
 import PageTitle from "../../components/page-title";
+import SEO from "../../components/seo";
 
 
 export default function TermsOfUse() {
 	return (
 		<>
+			<SEO
+				title="Terms of Use"
+				description="OpenGridLabs Terms of Use - Review the rules, responsibilities, and guidelines for using our website and services."
+				canonical="/terms-of-use"
+			/>
 			<PageTitle
 				mainTitle="Terms of Use"
 				subTitle="Effective Date: 26/11/2025"

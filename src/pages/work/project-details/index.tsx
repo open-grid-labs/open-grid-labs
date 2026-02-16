@@ -1,6 +1,7 @@
 import { useParams, Navigate } from "react-router";
 import PageTitle from "../../../components/page-title";
 import PageHeading from "../../../components/page-heading";
+import SEO from "../../../components/seo";
 import { CheckCircle2 } from "lucide-react";
 import Indicator from "../../../components/ui/indicator";
 import Carousel from "../../../components/ui/carousel";
@@ -491,6 +492,12 @@ export default function ProjectDetails() {
 
 	return (
 		<>
+			<SEO
+				title={`${project.title} - Case Study`}
+				description={project.overview.slice(0, 160)}
+				canonical={`/work/${projectId}`}
+				keywords={project.technologies.join(", ")}
+			/>
 			<PageTitle
 				label={project.category}
 				mainTitle={project.title}

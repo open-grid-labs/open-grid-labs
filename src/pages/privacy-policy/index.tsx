@@ -1,10 +1,16 @@
 import Card from "../../components/card";
 import PageTitle from "../../components/page-title";
+import SEO from "../../components/seo";
 
 
 export default function PrivacyPolicy() {
 	return (
 		<>
+			<SEO
+				title="Privacy Policy"
+				description="OpenGridLabs Privacy Policy - Learn how we collect, use, and protect your personal information when using our website and services."
+				canonical="/privacy-policy"
+			/>
 			<PageTitle
 				mainTitle="Privacy Policy"
 				subTitle="Effective Date: 26/11/2025"
