@@ -58,7 +58,7 @@ export default function ContactInfo() {
 					"New York, USA",
 					"Alberta, Canada",
 					"London, UK",
-					"Munich, Germany"
+					"Munich, Germany",
 					"Sydney, Australia",
 					"Tokyo, Japan",
 					"Singapore",
