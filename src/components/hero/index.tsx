@@ -36,7 +36,7 @@ const Hero = () => {
 	};
 
 	return (
-		<section id='home-hero' aria-label="Hero - Transform Your Digital Future" className="relative min-h-screen flex justify-center overflow-hidden px-4">
+		<section id='home-hero' aria-label="Transform Your Digital Future" className="relative min-h-screen flex justify-center overflow-hidden px-4">
 			<div className="container mx-auto">
 				<div className="max-w-4xl mx-auto text-center">
 					<motion.div
