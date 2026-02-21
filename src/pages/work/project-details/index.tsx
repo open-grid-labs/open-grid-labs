@@ -493,11 +493,19 @@ export default function ProjectDetails() {
 	return (
 		<>
 			<SEO
-				title={`${project.title} - Case Study`}
-				description={project.overview.slice(0, 160)}
-				canonical={`/work/${projectId}`}
-				keywords={project.technologies.join(", ")}
-			/>
+	title={`${project.title} - Case Study`}
+	description={
+		project.overview.length > 160
+			? project.overview
+					.slice(0, 157)
+					.split(" ")
+					.slice(0, -1)
+					.join(" ") + "..."
+			: project.overview
+	}
+	canonical={`/work/${projectId}`}
+	keywords={project.technologies.join(", ")}
+/>
 			<PageTitle
 				label={project.category}
 				mainTitle={project.title}
