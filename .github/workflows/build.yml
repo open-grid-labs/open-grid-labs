@@ -1,13 +1,10 @@
-name: Deploy to GitHub Pages
+name: Build website
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  pull_request:
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,10 +25,3 @@ jobs:
       # Build project
       - name: Build project
         run: npm run build
-      
-      # Deploy to gh-pages
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
