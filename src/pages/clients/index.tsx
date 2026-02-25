@@ -2,12 +2,19 @@ import { brands } from "../../components/hero";
 import PageHeading from "../../components/page-heading";
 import PageHeading2 from "../../components/page-heading-2";
 import PageTitle from "../../components/page-title";
+import SEO from "../../components/seo";
 import HomeTestimonials from "../home/components/testimonials";
 import ClientsExpertise from "./components/clients-expertise";
 
 export default function Clients() {
 	return (
 		<>
+			<SEO
+				title="Our Clients - Trusted Partners & Testimonials"
+				description="OpenGridLabs proudly partners with leading brands like Morphle Labs, Galen Data, ETG Commodities, NPCI, and United Health Group. See our client success stories and testimonials."
+				canonical="/clients"
+				keywords="OpenGridLabs clients, technology partners, client testimonials, healthcare clients, fintech clients, enterprise clients"
+			/>
 			<PageTitle
 				label="Our Clients"
 				mainTitle="Trusted"

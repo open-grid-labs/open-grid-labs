@@ -1,6 +1,7 @@
-import { useParams, Navigate } from "react-router";
+import { useParams, Navigate } from "react-router-dom";
 import PageTitle from "../../../components/page-title";
 import PageHeading from "../../../components/page-heading";
+import SEO from "../../../components/seo";
 import { CheckCircle2 } from "lucide-react";
 import Indicator from "../../../components/ui/indicator";
 import Carousel from "../../../components/ui/carousel";
@@ -491,6 +492,23 @@ export default function ProjectDetails() {
 
 	return (
 		<>
+			<SEO
+	title={`${project.title} - Case Study`}
+	description={
+		project.overview.length > 160
+  ? (() => {
+      const truncated = project.overview.slice(0, 160);
+      const lastSpace = truncated.lastIndexOf(" ");
+      const clean =
+        lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated;
+
+      return clean.trimEnd() + "...";
+    })()
+  : project.overview
+	}
+	canonical={`/work/${projectId}`}
+	keywords={project.technologies.join(", ")}
+/>
 			<PageTitle
 				label={project.category}
 				mainTitle={project.title}
@@ -539,11 +557,11 @@ export default function ProjectDetails() {
 									mainTitle="Video"
 									postTitle="Demo"
 								/>
-								<div className="mt-8 rounded-xl border border-border bg-foreground/5 min-h-[500px] flex items-center justify-center">
+								<div className="mt-8 rounded-xl border border-border bg-foreground/5 min-h-125 flex items-center justify-center">
 									<video
 										src={project.videoUrl}
 										controls
-										className="w-full h-full object-contain max-h-[600px]"
+										className="w-full h-full object-contain max-h-150"
 									>
 										Your browser does not support the video tag.
 									</video>
@@ -610,7 +628,7 @@ export default function ProjectDetails() {
 						<ul className="space-y-4">
 							{project.challenges.map((challenge, idx) => (
 								<li key={idx} className="flex gap-3">
-									<div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-sm font-bold mt-1">
+									<div className="shrink-0 w-6 h-6 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-sm font-bold mt-1">
 										{idx + 1}
 									</div>
 									<p className="text-muted-foreground flex-1">{challenge}</p>
@@ -627,7 +645,7 @@ export default function ProjectDetails() {
 						<ul className="space-y-4">
 							{project.solutions.map((solution, idx) => (
 								<li key={idx} className="flex gap-3">
-									<CheckCircle2 className="flex-shrink-0 w-6 h-6 text-green-500 mt-1" />
+									<CheckCircle2 className="shrink-0 w-6 h-6 text-green-500 mt-1" />
 									<p className="text-muted-foreground flex-1">{solution}</p>
 								</li>
 							))}
@@ -648,7 +666,7 @@ export default function ProjectDetails() {
 								key={idx}
 								className="bg-foreground/5 border border-border rounded-lg p-4 flex items-start gap-3"
 							>
-								<CheckCircle2 className="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5" />
+								<CheckCircle2 className="shrink-0 w-5 h-5 text-green-500 mt-0.5" />
 								<p className="text-foreground">{feature}</p>
 							</div>
 						))}
@@ -666,7 +684,7 @@ export default function ProjectDetails() {
 						{project.results.map((result, idx) => (
 							<div
 								key={idx}
-								className="relative bg-gradient-to-br from-foreground/10 to-foreground/5 border border-border rounded-xl p-6 overflow-hidden"
+								className="relative bg-linear-to-br from-foreground/10 to-foreground/5 border border-border rounded-xl p-6 overflow-hidden"
 							>
 								<div className="absolute -top-4 -right-4 w-20 h-20 bg-foreground/5 rounded-full"></div>
 								<div className="relative z-10">

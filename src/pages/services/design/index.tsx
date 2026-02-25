@@ -1,4 +1,5 @@
 import PageTitle from "../../../components/page-title";
+import SEO from "../../../components/seo";
 import OtherServices from "../components/other-services";
 import ToolsWeUse from "../components/tools-we-use";
 import ServiceDetailsWeServe from "../components/we-serve";
@@ -105,6 +106,12 @@ const otherServices = [
 export default function ServicesDesign() {
 	return (
 		<>
+			<SEO
+				title="Design Services - UI/UX, Brand Identity & Graphic Design"
+				description="Professional design services including UI/UX design, brand identity, logo design, graphic design, and motion graphics. We create stunning visual experiences using Figma, Sketch, and more."
+				canonical="/services/design"
+				keywords="UI/UX design services, brand identity, logo design, graphic design, web design, mobile app design, Figma, visual identity, motion graphics"
+			/>
 			<PageTitle
 				label="Design"
 				mainTitle="Design"

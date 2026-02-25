@@ -1,5 +1,6 @@
 import PageHeading from "../../components/page-heading";
 import PageTitle from "../../components/page-title";
+import SEO from "../../components/seo";
 import { ProjectsGrid } from "./components/projects-grid";
 
 const projects = [
@@ -69,6 +70,12 @@ const projects = [
 export default function Work() {
 	return (
 		<>
+			<SEO
+				title="Our Work - Portfolio & Case Studies"
+				description="Explore OpenGridLabs' portfolio of innovative projects including medical technology, fintech trading platforms, crypto analytics, EdTech, and AdTech solutions built with modern technologies."
+				canonical="/work"
+				keywords="software portfolio, case studies, web app projects, medical technology, fintech, crypto analytics, trading platforms, EdTech platform"
+			/>
 			<PageTitle
 				label="Our Works"
 				mainTitle="Featured"

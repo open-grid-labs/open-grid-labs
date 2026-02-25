@@ -1,4 +1,5 @@
 import PageTitle from "../../../components/page-title";
+import SEO from "../../../components/seo";
 import HomeFaq from "../../home/components/faq";
 import About from "./components/about";
 import AboutHistory from "./components/about-history";
@@ -37,6 +38,12 @@ const faqs = [
 export default function AboutUs() {
   return (
     <>
+      <SEO
+        title="About Us - Our Story, History & Values"
+        description="Learn about OpenGridLabs - an innovative IT solutions company empowering businesses with cutting-edge software development, AI, and design services. Discover our history, mission, and core values."
+        canonical="/about/about-us"
+        keywords="about OpenGridLabs, company history, core values, IT solutions company, software agency, tech company"
+      />
       <PageTitle
         label="About Us"
         mainTitle="Discover"
