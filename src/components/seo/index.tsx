@@ -1,56 +1,40 @@
 import { Helmet } from "react-helmet-async";
 
-interface SEOProps {
+type SEOProps = {
 	title: string;
 	description: string;
 	canonical?: string;
-	ogType?: string;
-	ogImage?: string;
 	keywords?: string;
 	noIndex?: boolean;
-}
+};
 
 const SITE_NAME = "OpenGridLabs";
 const SITE_URL = "https://opengridlabs.com";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og-default.png`;
+const OG_IMAGE = `${SITE_URL}/images/og-default.png`;
 
-export default function SEO({
-	title,
-	description,
-	canonical,
-	ogType = "website",
-	ogImage,
-	keywords,
-	noIndex = false,
-}: SEOProps) {
+export default function SEO({title, description, canonical, keywords, noIndex = false}: SEOProps) {
 	const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
-	const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
-	const image = ogImage || DEFAULT_OG_IMAGE;
+	const url = canonical && `${SITE_URL}${canonical}`;
 
 	return (
 		<Helmet>
-			{/* Basic Meta Tags */}
 			<title>{fullTitle}</title>
 			<meta name="description" content={description} />
 			{keywords && <meta name="keywords" content={keywords} />}
 			{noIndex && <meta name="robots" content="noindex, nofollow" />}
+			{url && <link rel="canonical" href={url}/>}
 
-			{/* Canonical URL */}
-			{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-
-			{/* Open Graph Meta Tags */}
 			<meta property="og:title" content={fullTitle} />
 			<meta property="og:description" content={description} />
-			<meta property="og:type" content={ogType} />
+			<meta property="og:type" content="website"/>
 			<meta property="og:site_name" content={SITE_NAME} />
-			<meta property="og:image" content={image} />
-			{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+			<meta property="og:image" content={OG_IMAGE}/>
+			{url && <meta property="og:url" content={url}/>}
 
-			{/* Twitter Card Meta Tags */}
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={fullTitle} />
 			<meta name="twitter:description" content={description} />
-			<meta name="twitter:image" content={image} />
+			<meta name="twitter:image" content={OG_IMAGE}/>
 		</Helmet>
 	);
 }

@@ -1,13 +1,12 @@
 export default function Logo() {
   return (
-    <div className="flex gap-2 items-center">
+	  <div className="flex gap-2 items-center text-foreground dark:text-primary">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 410 391"
         width={50}
         height={50}
-        className="text-primary"
-        aria-label="OpenGridLabs Logo"
+        aria-hidden="true"
         fill="currentColor"
       >
         <g transform="translate(0,391) scale(0.1,-0.1)">
@@ -59,11 +58,7 @@ c-31 8 -75 58 -75 85 0 16 -33 36 -163 98 -220 106 -201 103 -215 32z"/>
         </g>
       </svg>
 
-      <div className="flex flex-col justify-center items-start">
-        <span className="text-xl font-bold leading-none text-primary">
-          OpenGridLabs
-        </span>
-      </div>
+		  <span className="text-xl font-bold leading-none">OpenGridLabs</span>
     </div>
   );
 }

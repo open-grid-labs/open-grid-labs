@@ -1,18 +1,18 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import { BrowserRouter } from 'react-router'
-import ScrollToTop from './components/scroll-to-top/index.tsx'
-import { HelmetProvider } from 'react-helmet-async'
-import { ThemeProvider } from './context/theme-provider'
+import {createRoot} from "react-dom/client";
+import {BrowserRouter} from "react-router";
+import {HelmetProvider} from "react-helmet-async";
+import App from "./App";
+import ScrollToTop from "./components/scroll-to-top";
+import {ThemeProvider} from "./context/theme-provider";
+import "./index.css";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
 	<HelmetProvider>
-		<ThemeProvider defaultTheme="system" storageKey="opengridlabs-theme">
+		<ThemeProvider storageKey="opengridlabs-theme">
 			<BrowserRouter>
 				<ScrollToTop />
 				<App />
 			</BrowserRouter>
 		</ThemeProvider>
 	</HelmetProvider>
-)
+);
