@@ -21,6 +21,7 @@ export const brands = [
 	{ href: '/clients/npci.png', alt: 'NPCI' },
 	{ href: '/clients/ambassade-de-france.png', alt: 'Ambassade De France' },
 	{ href: '/clients/united-health-group.png', alt: 'United Health Group' },
+	{ href: '/clients/safeguard.svg', alt: 'Safeguard' },
 ];
 
 /* Feature capability pills */

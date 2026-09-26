@@ -2,7 +2,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import PageHeading from "../../../../components/page-heading/index.tsx";
 import ButtonLink from "../../../../components/ui/button-link.tsx";
+import Button from "../../../../components/ui/button.tsx";
 import { Code2, Brain, Palette, ArrowUpRight, Cloud } from "lucide-react";
+
+declare global {
+  interface Window {
+    Calendly: { initPopupWidget: (options: { url: string }) => void };
+  }
+}
 
 // ── Service Data ──────────────────────────────────────────────
 const categories = [
@@ -99,6 +106,14 @@ const categories = [
 export default function HomeServices() {
   const [activeIdx, setActiveIdx] = useState(0);
   const active = categories[activeIdx];
+
+  const handleBookCall = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/opengridlabs/30min?hide_landing_page_details=1&hide_gdpr_banner=1",
+      });
+    }
+  };
 
   return (
     <section
@@ -229,9 +244,15 @@ export default function HomeServices() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35, duration: 0.5 }}
                 >
-                  <ButtonLink to={active.link} className="w-fit">
-                    {active.cta}
-                  </ButtonLink>
+                  {active.id === "validation-mvp" ? (
+                    <Button onClick={handleBookCall} className="w-fit">
+                      {active.cta}
+                    </Button>
+                  ) : (
+                    <ButtonLink to={active.link} className="w-fit">
+                      {active.cta}
+                    </ButtonLink>
+                  )}
                 </motion.div>
               </div>
 
