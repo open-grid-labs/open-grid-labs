@@ -16,98 +16,14 @@
   </url>
 
   <url>
-    <loc>https://opengridlabs.com/work/frontend-microscopic-scanner</loc>
+	  <loc>https://opengridlabs.com/work/safeguard</loc>
     <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/cloud-medical-devices</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/airtrader-trading-simulator</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/crypto-analytical-tools</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/tread-pattern-dashboard</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/crypto-deribit-option-trader</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/champspace</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/adnow</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/curiote</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/work/data-engineering-datascience</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/clients</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/services/software</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
+	  <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://opengridlabs.com/services/intelligent</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://opengridlabs.com/services/design</loc>
+	  <loc>https://opengridlabs.com/services</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -154,5 +70,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
 </urlset>
