@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "motion/react";
-import { Plus, Minus, HelpCircle, ArrowRight, Sparkles } from "lucide-react";
-import Button from "../../../../components/ui/button";
-import Logo from "../../../../icons/logo";
+import {useState} from "react";
+import {motion, AnimatePresence} from "motion/react";
+import {Plus, ArrowRight, Coffee} from "lucide-react";
+import SectionHeading from "../../../../components/section-heading";
+import {openCalendly} from "../../../../utils/calendly";
+import {inView} from "../../../../utils/motion";
 
 type FaqItem = {
 	id: number;
@@ -17,380 +18,140 @@ type HomeFaqProps = {
 const faqsData: FaqItem[] = [
 	{
 		id: 1,
-		question: "Do you work with pre-funded or early-stage startups?",
+		question: "What does \"co-build\" actually mean?",
 		answer:
-			"Yes, we frequently partner with pre-seed and seed founders. We help scope a capital-efficient MVP and build interactive prototypes that are crucial for raising initial angel or VC funding.",
+			"We act like the technical co-founder you don't have yet. We help analyse the idea, plan the budget, design and build the MVP, launch it to real users, and then scale it. You keep ownership of the product and the code.",
 	},
 	{
 		id: 2,
-		question: "How do you help a startup scale once it gains traction?",
+		question: "Is 3 months really enough to build an MVP?",
 		answer:
-			"We act as your extended engineering team. We upgrade your architecture to handle massive traffic spikes, audit security, build advanced feature pipelines, and set up growth analytics to optimize onboarding.",
+			"For a focused MVP, yes. That's what the first two weeks of analysis are for: we cut the scope down to what proves your idea, and we build faster with AI-assisted engineering. If your idea needs more than 90 days, we'll say so before you spend anything on the build.",
 	},
 	{
 		id: 3,
-		question: "How fast can you launch our MVP?",
+		question: "Are the servers really free?",
 		answer:
-			"A typical MVP takes 4 to 8 weeks. We focus on hyper-focused scoping — identifying the core value proposition of your product so you can launch fast, gather feedback, and iterate.",
+			"Yes. We host your product on our own infrastructure at no cost until you land your first customer, with 100% uptime. After that, we'll agree a simple hosting plan together.",
 	},
 	{
 		id: 4,
-		question: "Do you take equity, or do you work on a fee-for-service model?",
+		question: "How do you use AI and LLMs in my project?",
 		answer:
-			"We primarily work on a flexible fee-for-service model (retainer or milestone-based). For selected partners with high potential, we are open to co-builder models that mix equity and fees.",
+			"We use leading AI models and LLMs for research, pair-programming, test generation, code review and drafting reports. Our engineers review every line and make every product decision. The code and IP are yours.",
 	},
 	{
 		id: 5,
-		question: "Can you help transition the product to an in-house team later?",
+		question: "What if my idea isn't good?",
 		answer:
-			"Absolutely. We write clean, fully-documented code and help you transition smoothly by screening, onboarding, and training your first in-house engineering hires when you are ready.",
+			"Then it's much better to find out in week 2 than in month 6. The analysis stage exists to give you an honest answer: build it, pivot it, or rethink it.",
+	},
+	{
+		id: 6,
+		question: "What will I see from you each week?",
+		answer:
+			"A short written report covering what shipped, what's next, any blockers and budget used, plus a live staging link you can click around in. At the end of the 90 days you also get a market test report based on real user data.",
+	},
+	{
+		id: 7,
+		question: "Do you take equity or charge fees?",
+		answer:
+			"We mostly work on a transparent, milestone-based fee. For a few founders we're especially excited about, we're open to a mix of equity and fees.",
 	},
 ];
 
 export default function HomeFaq({ faqs = faqsData }: HomeFaqProps) {
-	const [openId, setOpenId] = useState<number | null>(1);
-	const sectionRef = useRef<HTMLElement>(null);
-	const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
+	const [openId, setOpenId] = useState<number | null>(faqs[0]?.id ?? null);
 	const toggle = (id: number) => setOpenId((prev) => (prev === id ? null : id));
 
-	const handleBookCall = () => {
-		if ((window as any).Calendly) {
-			(window as any).Calendly.initPopupWidget({
-				url: "https://calendly.com/opengridlabs/30min?hide_landing_page_details=1&hide_gdpr_banner=1",
-			});
-		}
-	};
-
 	return (
-		<section
-			id="home-faq"
-			ref={sectionRef}
-			className="w-full relative py-28 md:py-36 overflow-hidden"
-			style={{ perspective: "1400px" }}
-		>
-			{/* ── Background ────────────────────────────────── */}
-			<div className="absolute inset-0 pointer-events-none">
-				<div
-					className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
-					style={{
-						background:
-							"radial-gradient(circle, hsla(280,100%,60%,0.04) 0%, hsla(210,100%,50%,0.02) 40%, transparent 70%)",
-					}}
-				/>
-				<div className="absolute top-[5%] right-[5%] w-[400px] h-[400px] bg-accent/5 rounded-full blur-[200px]" />
-				<div className="absolute bottom-[10%] left-[5%] w-[300px] h-[300px] bg-primary/4 rounded-full blur-[160px]" />
-				{/* Subtle dot grid */}
-				<div
-					className="absolute inset-0 opacity-5 dark:opacity-[0.025] pointer-events-none text-foreground"
-					style={{
-						backgroundImage:
-							"radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
-						backgroundSize: "40px 40px",
-					}}
-				/>
-			</div>
+		<section id="home-faq" className="w-[90%] max-w-[1400px] mx-auto py-8 md:py-12">
+			<SectionHeading
+				kicker="FAQ"
+				title={<>Questions? <span className="text-primary">Good.</span></>}
+				subtitle="Here are the ones founders ask us most."
+			/>
 
-			{/* ── Section Header ────────────────────────────── */}
-			<motion.div
-				initial={{ opacity: 0, y: 40 }}
-				animate={isInView ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-				className="relative z-10 flex flex-col items-center gap-6 px-4 mb-16 md:mb-20"
-			>
-				<motion.div
-					initial={{ scale: 0, rotate: -180 }}
-					animate={isInView ? { scale: 1, rotate: 0 } : {}}
-					transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 150 }}
-					className="relative"
-				>
-					<div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-150" />
-					<div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-[0_0_30px_hsla(210,100%,50%,0.35)]">
-						<HelpCircle size={24} className="text-foreground" />
-					</div>
-				</motion.div>
-
-				<div className="flex flex-col items-center gap-3">
-					<h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-foreground tracking-tight text-center leading-tight">
-						Got{" "}
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-accent">
-							Questions?
-						</span>
-						<br />
-						We've Got Answers.
-					</h2>
-					<p className="text-base md:text-lg text-foreground/60 dark:text-foreground/35 max-w-lg font-light text-center leading-relaxed">
-						Everything you need to know about our co-building and growth partnerships.
-					</p>
-				</div>
-			</motion.div>
-
-			{/* ── Content: FAQ + CTA ────────────────────────── */}
-			<div className="relative z-10 w-[90%] max-w-[1600px]  mx-auto flex flex-col lg:flex-row gap-6 md:gap-8">
-
-				{/* ── FAQ Accordion ─────────────────────────── */}
-				<div className="flex-1 flex flex-col gap-3">
+			<div className="grid lg:grid-cols-[1fr_360px] gap-8 mt-14 md:mt-16 items-start">
+				<div className="flex flex-col gap-4">
 					{faqs.map((faq, i) => {
 						const isOpen = openId === faq.id;
 						return (
 							<motion.div
 								key={faq.id}
-								initial={{ opacity: 0, y: 30, rotateX: 8 }}
-								animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-								transition={{
-									duration: 0.6,
-									delay: 0.3 + i * 0.1,
-									ease: [0.22, 1, 0.36, 1],
-								}}
-								style={{ transformStyle: "preserve-3d" }}
+								{...inView(i * 0.04, 16)}
+								className={`rounded-2xl pop overflow-hidden transition-colors ${isOpen ? "bg-accent/30" : "bg-card"}`}
 							>
-								<motion.div
-									animate={{
-										y: isOpen ? -2 : 0,
-									}}
-									transition={{ duration: 0.3, ease: "easeOut" }}
-									className={`relative rounded-2xl overflow-hidden transition-all duration-500 backdrop-blur-xl border ${
-										isOpen
-											? "bg-white/90 dark:bg-[#151522e6] border-primary/20 shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_0_1px_hsla(210,100%,50%,0.15)]"
-											: "bg-white/50 dark:bg-[#14141e99] border-black/5 dark:border-white/5 hover:bg-white/70 dark:hover:bg-[#14141ecc] shadow-md dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
-									}`}
+								<button
+									onClick={() => toggle(faq.id)}
+									aria-expanded={isOpen}
+									className="flex justify-between items-center w-full px-6 py-5 text-left cursor-pointer gap-4"
 								>
-									{/* Top accent line — only visible when open */}
-									<AnimatePresence>
-										{isOpen && (
-											<motion.div
-												initial={{ scaleX: 0 }}
-												animate={{ scaleX: 1 }}
-												exit={{ scaleX: 0 }}
-												transition={{ duration: 0.4 }}
-												className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-primary via-blue-400 to-accent origin-left"
-											/>
-										)}
-									</AnimatePresence>
-
-									{/* Glow when open */}
-									{isOpen && (
-										<div
-											className="absolute inset-0 pointer-events-none rounded-2xl"
-											style={{
-												background:
-													"radial-gradient(ellipse at 50% 0%, hsla(210,100%,50%,0.05), transparent 70%)",
-											}}
-										/>
-									)}
-
-									{/* Question button */}
-									<button
-										onClick={() => toggle(faq.id)}
-										className="flex justify-between items-center w-full px-6 py-5 text-left cursor-pointer group gap-4"
+									<span className="flex items-center gap-4">
+										<span
+											className="font-mono text-sm font-bold text-primary shrink-0">{String(i + 1).padStart(2, "0")}</span>
+										<span
+											className="text-base md:text-lg font-display font-bold">{faq.question}</span>
+									</span>
+									<motion.span
+										animate={{rotate: isOpen ? 45 : 0}}
+										transition={{type: "spring", stiffness: 300, damping: 18}}
+										className={`shrink-0 w-9 h-9 rounded-full border-2 border-ink flex items-center justify-center ${isOpen ? "bg-primary text-candy" : "bg-card"}`}
 									>
-										<div className="flex items-center gap-4">
-											{/* Number */}
-											<span
-												className={`font-mono text-sm font-semibold transition-colors duration-300 shrink-0 ${
-													isOpen ? "text-primary" : "text-foreground/50 dark:text-foreground/20"
-												}`}
-											>
-												{String(i + 1).padStart(2, "0")}
-											</span>
-											{/* Question text */}
-											<span
-												className={`text-base md:text-lg font-medium transition-colors duration-300 ${
-													isOpen
-														? "text-foreground"
-														: "text-foreground/65 group-hover:text-foreground/90"
-												}`}
-											>
-												{faq.question}
-											</span>
-										</div>
+										<Plus size={18} strokeWidth={2.5}/>
+									</motion.span>
+								</button>
 
-										{/* Icon toggle */}
+								<AnimatePresence initial={false}>
+									{isOpen && (
 										<motion.div
-											animate={{ rotate: isOpen ? 180 : 0 }}
-											transition={{ duration: 0.3 }}
-											className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center shadow-sm transition-colors duration-300 ${
-												isOpen 
-													? "bg-primary border-primary shadow-[0_0_16px_hsla(210,100%,50%,0.45)] text-foreground" 
-													: "bg-black/5 dark:bg-white/5 border-black/10 dark:border-white/10 text-foreground/70 dark:text-foreground/50 group-hover:text-primary group-hover:dark:text-primary group-hover:border-primary/50 group-hover:bg-primary/10"
-											}`}
+											key="answer"
+											initial={{height: 0, opacity: 0}}
+											animate={{height: "auto", opacity: 1}}
+											exit={{height: 0, opacity: 0}}
+											transition={{duration: 0.3, ease: [0.22, 1, 0.36, 1]}}
+											className="overflow-hidden"
 										>
-											{isOpen ? (
-												<Minus size={14} className="text-foreground" />
-											) : (
-												<Plus size={14} className="currentColor" />
-											)}
+											<p className="px-6 pb-6 md:pl-[4.25rem] text-muted-foreground leading-relaxed">{faq.answer}</p>
 										</motion.div>
-									</button>
-
-									{/* Answer */}
-									<AnimatePresence initial={false}>
-										{isOpen && (
-											<motion.div
-												key="answer"
-												initial={{ height: 0, opacity: 0 }}
-												animate={{ height: "auto", opacity: 1 }}
-												exit={{ height: 0, opacity: 0 }}
-												transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-												className="overflow-hidden"
-											>
-												<div className="px-6 pb-6 ml-10">
-													<div className="h-[1px] bg-gradient-to-r from-black/10 dark:from-white/10 to-transparent mb-5" />
-													<p className="text-base text-foreground/70 dark:text-foreground/50 leading-relaxed font-light">
-														{faq.answer}
-													</p>
-												</div>
-											</motion.div>
-										)}
-									</AnimatePresence>
-								</motion.div>
+									)}
+								</AnimatePresence>
 							</motion.div>
 						);
 					})}
 				</div>
 
-				{/* ── CTA Card ──────────────────────────────── */}
+				{/* CTA card */}
 				<motion.div
-					initial={{ opacity: 0, x: 40, rotateY: -8 }}
-					animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
-					transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-					className="lg:w-[360px] shrink-0"
-					style={{ transformStyle: "preserve-3d" }}
+					initial={{opacity: 0, y: 24, rotate: 3}}
+					whileInView={{opacity: 1, y: 0, rotate: 1.5}}
+					viewport={{once: true}}
+					transition={{duration: 0.5}}
+					className="bg-primary text-candy pop-lg rounded-[28px] p-8 flex flex-col gap-5 lg:sticky lg:top-28"
 				>
-					<div
-						className="relative rounded-[28px] overflow-hidden h-full bg-white/90 dark:bg-[#161624e6] backdrop-blur-xl border border-black/5 dark:border-white/5 shadow-xl dark:shadow-[0_30px_80px_rgba(0,0,0,0.4),inset_0_1px_0_0_rgba(255,255,255,0.05)]"
+					<span
+						className="w-14 h-14 rounded-2xl bg-paper border-2 border-candy flex items-center justify-center">
+						<Coffee size={26}/>
+					</span>
+					<h3 className="font-display font-extrabold text-3xl leading-tight">Still curious? Let's grab a
+						(virtual) coffee.</h3>
+					<p className="leading-relaxed">
+						A free 30-minute call. Tell us the idea, we'll tell you honestly what it would take to get it to
+						market.
+					</p>
+					<ul className="flex flex-col gap-2 font-semibold">
+						<li>✓ Honest first take on your idea</li>
+						<li>✓ Rough budget & timeline</li>
+						<li>✓ No strings attached</li>
+					</ul>
+					<button
+						onClick={() => openCalendly()}
+						className="mt-2 bg-paper text-candy border-2 border-candy rounded-full h-14 font-bold inline-flex items-center justify-center gap-2 shadow-[4px_4px_0_0_hsl(260,25%,12%)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_hsl(260,25%,12%)] transition-all cursor-pointer"
 					>
-						{/* Top gradient line */}
-						<div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent opacity-60" />
-
-						{/* Corner glow */}
-						<div className="absolute -top-12 -right-12 w-48 h-48 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
-						<div className="absolute -bottom-12 -left-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-
-						{/* Dot grid overlay */}
-						<div
-							className="absolute inset-0 opacity-5 dark:opacity-[0.03] text-foreground pointer-events-none"
-							style={{
-								backgroundImage:
-									"radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
-								backgroundSize: "24px 24px",
-							}}
-						/>
-
-						{/* Rotating ring decoration */}
-						<motion.div
-							className="absolute top-6 right-6 w-24 h-24 rounded-full border border-black/5 dark:border-transparent"
-							animate={{ rotate: 360 }}
-							transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-						>
-							<div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary/40 shadow-[0_0_8px_hsla(210,100%,50%,0.6)]" />
-						</motion.div>
-
-						<div className="relative z-10 p-8 md:p-10 flex flex-col gap-7 h-full">
-							{/* Logo */}
-							<div className="w-12 h-12 opacity-70 mix-blend-screen">
-								<Logo />
-							</div>
-
-							{/* Headline */}
-							<div className="flex flex-col gap-3">
-								<div className="flex items-center gap-2">
-									<Sparkles size={14} className="text-primary/60" />
-									<span className="text-xs tracking-[0.2em] uppercase text-primary/60 font-medium">
-										Free 30-min session
-									</span>
-								</div>
-								<h3 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
-									Still Have{" "}
-									<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-										Doubts?
-									</span>
-									<br />
-									Let's Talk.
-								</h3>
-								<p className="text-sm md:text-base text-foreground/60 dark:text-foreground/35 font-light leading-relaxed">
-									Book a free strategy session to discuss your startup's technical roadmap, MVP scope, or growth bottlenecks — no obligation.
-								</p>
-							</div>
-
-							{/* Feature list */}
-							<ul className="flex flex-col gap-3">
-								{[
-									"Custom project scoping",
-									"Tech stack recommendations",
-									"Transparent pricing breakdown",
-								].map((item, i) => (
-									<motion.li
-										key={i}
-										initial={{ opacity: 0, x: -10 }}
-										animate={isInView ? { opacity: 1, x: 0 } : {}}
-										transition={{ delay: 0.9 + i * 0.1 }}
-										className="flex items-center gap-3 text-sm text-foreground/45"
-									>
-										<div className="w-4 h-4 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center shrink-0">
-											<div className="w-1.5 h-1.5 rounded-full bg-foreground" />
-										</div>
-										{item}
-									</motion.li>
-								))}
-							</ul>
-
-							{/* CTA Button */}
-							<motion.div
-								whileHover={{ scale: 1.02, y: -2 }}
-								whileTap={{ scale: 0.98 }}
-								transition={{ duration: 0.2 }}
-								className="mt-auto"
-							>
-								<Button
-									onClick={handleBookCall}
-									className="w-full h-14 text-base font-semibold tracking-wide shadow-[0_0_30px_hsla(210,100%,50%,0.3)] hover:shadow-[0_0_45px_hsla(210,100%,50%,0.5)] transition-shadow duration-300 group"
-								>
-									<span>Schedule a Call</span>
-									<motion.div
-										className="ml-2"
-										animate={{ x: [0, 4, 0] }}
-										transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-									>
-										<ArrowRight size={18} />
-									</motion.div>
-								</Button>
-							</motion.div>
-						</div>
-					</div>
+						Book a free call <ArrowRight size={18}/>
+					</button>
 				</motion.div>
 			</div>
-
-			{/* ── Floating particles ────────────────────────── */}
-			{[...Array(8)].map((_, i) => (
-				<motion.div
-					key={i}
-					className="absolute rounded-full pointer-events-none"
-					style={{
-						width: 2 + Math.random() * 2,
-						height: 2 + Math.random() * 2,
-						left: `${10 + Math.random() * 80}%`,
-						top: `${10 + Math.random() * 80}%`,
-						background:
-							i % 2 === 0 ? "hsl(210, 100%, 65%)" : "hsl(280, 100%, 70%)",
-						boxShadow: `0 0 5px ${
-							i % 2 === 0
-								? "hsla(210,100%,60%,0.5)"
-								: "hsla(280,100%,65%,0.5)"
-						}`,
-					}}
-					animate={{
-						y: [0, -(12 + Math.random() * 25), 0],
-						opacity: [0, 0.6, 0],
-					}}
-					transition={{
-						duration: 4 + Math.random() * 4,
-						repeat: Infinity,
-						delay: Math.random() * 3,
-						ease: "easeInOut",
-					}}
-				/>
-			))}
 		</section>
 	);
 }

@@ -2,7 +2,6 @@ import Card from "../../components/card";
 import PageTitle from "../../components/page-title";
 import SEO from "../../components/seo";
 
-
 export default function PrivacyPolicy() {
 	return (
 		<>
@@ -54,7 +53,6 @@ export default function PrivacyPolicy() {
 					We may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised “Effective Date”.
 				</Card>
 			</div>
-
 		</>
 	)
 }
