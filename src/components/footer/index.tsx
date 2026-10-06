@@ -1,5 +1,5 @@
 import {Linkedin} from "lucide-react";
-import { Link } from "react-router";
+import {Link} from "react-router";
 import Logo from "../../icons/logo";
 
 const footerLinks = {
@@ -16,7 +16,6 @@ const footerLinks = {
 		{name: "Career", href: "/about/career"},
 	],
 	Company: [
-		{name: "Our Work", href: "/work"},
 		{name: "Contact", href: "/contact-us"},
 	],
 	Other: [

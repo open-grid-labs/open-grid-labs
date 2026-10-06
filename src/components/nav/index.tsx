@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import {Menu, X, Moon, Sun} from "lucide-react";
-import {motion, AnimatePresence} from "motion/react";
-import {NavLink, Link} from "react-router";
+import {useEffect, useState} from "react";
+import {Menu, Moon, Sun, X} from "lucide-react";
+import {AnimatePresence, motion} from "motion/react";
+import {Link, NavLink} from "react-router";
 import Button from "../ui/button";
 import Logo from "../../icons/logo";
-import { useTheme } from "../../context/theme-provider";
+import {useTheme} from "../../context/theme-provider";
 import {openCalendly} from "../../utils/calendly";
 
 const navItems = [
 	{name: "How it works", href: "/services"},
-	{ name: "Work", href: "/work" },
 	{name: "About Us", href: "/about/about-us"},
 	{name: "Team", href: "/about/team"},
 	{name: "Career", href: "/about/career"},

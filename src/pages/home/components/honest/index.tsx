@@ -1,6 +1,5 @@
 import {motion} from "motion/react";
-import {Link} from "react-router";
-import {Handshake, Eye, Flame, Sparkles} from "lucide-react";
+import {Eye, Flame, Handshake, Sparkles} from "lucide-react";
 import SectionHeading from "../../../../components/section-heading";
 import {inView} from "../../../../utils/motion";
 
@@ -64,15 +63,6 @@ export default function HomeHonest() {
 						</motion.div>
 					);
 				})}
-			</div>
-
-			<div className="flex justify-center mt-14">
-				<Link
-					to="/work"
-					className="font-display font-bold text-lg underline decoration-primary decoration-[3px] underline-offset-[6px] hover:text-primary transition-colors"
-				>
-					See what we've built so far →
-				</Link>
 			</div>
 		</section>
 	);
